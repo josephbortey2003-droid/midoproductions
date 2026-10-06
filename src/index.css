@@ -1,82 +1,79 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  /* Sampled from the MIDO Productions logo */
+  --color-brand: #294294;
+  --color-brand-dark: #1b2c68;
+  --color-brand-light: #e9edf8;
+  --color-ink: #111a33;
+  --color-mist: #f4f6fa;
+  --color-line: #e2e6ee;
+  --color-muted: #5a6379;
+
+  --font-sans: Manrope, system-ui, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, serif;
+
+  --container-site: 76rem;
+}
 
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    background-color: #FFFFFF;
-    color: #0F172A;
-    overflow-x: hidden;
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif text-ink;
+    letter-spacing: -0.01em;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    @apply outline-hidden ring-2 ring-brand ring-offset-2;
   }
 }
 
-/* Lenis Smooth Scroll Styles */
-html.lenis, html.lenis body {
-  height: auto;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-.lenis.lenis-stopped {
-  overflow: hidden;
+@utility container-site {
+  @apply mx-auto w-full max-w-site px-5 sm:px-8;
 }
 
-/* Sky Blue & Royal Blue Brand Styles */
-.text-sky-gradient {
-  background: linear-gradient(135deg, #0A188F 0%, #0284C7 60%, #38BDF8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+@utility eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.16em] text-brand;
 }
 
-.text-white-gradient {
-  background: linear-gradient(180deg, #0F172A 0%, #334155 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition-colors;
 }
 
-.bg-glass {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 4px 20px -2px rgba(10, 24, 143, 0.05);
+@utility btn-primary {
+  @apply btn bg-brand text-white hover:bg-brand-dark;
 }
 
-.bg-mido-card {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+@utility btn-secondary {
+  @apply btn border border-line bg-white text-ink hover:border-brand hover:text-brand;
 }
 
-.bg-mido-card:hover {
-  border-color: #93C5FD;
-  box-shadow: 0 12px 24px -6px rgba(10, 24, 143, 0.08);
+@utility btn-light {
+  @apply btn bg-white text-brand hover:bg-brand-light;
 }
 
-.glow-sky {
-  box-shadow: 0 0 25px -4px rgba(10, 24, 143, 0.15);
+@utility link-arrow {
+  @apply inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-brand-dark;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+@utility field {
+  @apply w-full rounded-md border border-line bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-muted/70 focus:border-brand focus:outline-hidden focus:ring-1 focus:ring-brand;
 }
-::-webkit-scrollbar-track {
-  background: #F8FAFC;
-}
-::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #0284C7;
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

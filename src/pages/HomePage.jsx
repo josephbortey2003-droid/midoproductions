@@ -1,640 +1,173 @@
-import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Volume2, Award, ShieldCheck, ArrowRight, CheckCircle2, Sliders, Radio, Music2, Phone, Sparkles, UserCheck, Play, ExternalLink, X } from 'lucide-react';
-import { YoutubeIcon } from '../components/SocialIcons';
-import AudioVisualizer from '../components/AudioVisualizer';
-import SoundboardDemo from '../components/SoundboardDemo';
+import { ArrowRight } from 'lucide-react';
+import Photo from '../components/Photo';
+import VideoGrid from '../components/VideoGrid';
+import CtaBand from '../components/CtaBand';
+import { audiences, clients, services, videos } from '../data/site';
 
 export default function HomePage() {
-  const [selectedVideo, setSelectedVideo] = useState(null);
-
-  const clientLogos = [
-    { name: 'Harmonious Chorale Ghana', logo: '/images/clients/harmonious-chorale.webp' },
-    { name: 'The Symphonials Ghana', logo: '/images/clients/the-symphonials.webp' },
-    { name: 'CIMG National Awards', logo: '/images/clients/cimg-logo.webp' },
-    { name: 'Business & Financial Times', logo: '/images/clients/bft-logo.webp' },
-    { name: 'Presbyterian Church of Ghana', logo: '/images/clients/presbyterian-church-ghana.webp' },
-    { name: 'HPC Ghana', logo: '/images/clients/hpc-logo.webp' },
-  ];
-
-  const featuredVideos = [
-    {
-      id: 'BXnc5jMzZ7c',
-      title: 'Interview & Studio Session With Lordina The Soprano',
-      category: 'Choral Art Music',
-      published: 'September 2026',
-      duration: '4:20',
-      description: 'Premier Ghanaian classical soprano Lordina shares her experience working with MIDO Productions Ltd on vocal reproduction and acoustic clarity.',
-    },
-    {
-      id: 'fh0BZj4EdwE',
-      title: 'Ghana Armed Forces Military Band: "Oman Beye Yie"',
-      category: 'Symphonic Brass',
-      published: 'March 2026',
-      duration: '6:15',
-      description: 'Uncle Ato’s classic tracked live by the GAF Military Band at Mido Studios Oyibi, demonstrating warm acoustic brass and percussion separation.',
-    },
-    {
-      id: 'qdLP1yi5FOo',
-      title: 'Chamber of Marketers / Cocoa Ghana Launch Event',
-      category: 'Corporate Summit',
-      published: 'August 2026',
-      duration: '3:45',
-      description: 'Turnkey live sound reinforcement, stage lighting, and video displays for this milestone national gathering at AICC.',
-    },
-  ];
-
   return (
-    <div className="space-y-24 pt-20 pb-16 bg-white dark:bg-slate-950 transition-colors duration-300">
-      
-      {/* 1. Hero Section (Official Royal Blue & White Branding) */}
-      <section className="relative min-h-[85vh] flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
-        
-        {/* Subtle Ambient Royal Blue Glow */}
-        <div className="pointer-events-none absolute -top-24 left-1/4 w-[500px] h-[500px] bg-blue-100/60 dark:bg-blue-950/40 rounded-full blur-[140px]" />
-        <div className="pointer-events-none absolute top-1/3 -right-20 w-[450px] h-[450px] bg-sky-100/60 dark:bg-sky-950/30 rounded-full blur-[150px]" />
-
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Text Column */}
-          <div className="lg:col-span-7 space-y-6">
-            
-            {/* Official Logo Banner & Tagline */}
-            <div className="flex flex-wrap items-center gap-3">
-              <img
-                src="/mido-logo-badge.jpg"
-                alt="MIDO Productions Official Emblem"
-                className="h-11 w-auto rounded-xl border border-blue-200 dark:border-blue-800 shadow-sm bg-[#001080] object-contain p-1"
-              />
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-xs text-[#0A188F] dark:text-sky-300">
-                <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-sky-400 animate-pulse" />
-                <span className="font-bold tracking-wide">ESTABLISHED 2000 • ACCRA, GHANA</span>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-[1.12] tracking-tight">
-                Pioneering <span className="text-[#0A188F] dark:text-sky-400">Live Sound & Choral Acoustics</span> for Over Two Decades.
-              </h1>
-              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-sans max-w-2xl">
-                Founded by veteran sound engineer <strong>Mr. Dominic Ansah-Asare</strong>, <strong>MIDO Productions Ltd</strong> is Ghana’s definitive benchmark for live concert audio, classical choral acoustics, intelligent stage lighting, 4K LED video walls, and global broadcast transmission.
-              </p>
-            </div>
-
-            {/* Quick Proof Badges */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-              <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-                <div className="text-[#0A188F] dark:text-sky-400 font-display font-bold text-2xl">24+ Years</div>
-                <div className="text-slate-600 dark:text-slate-400 text-xs font-medium">Acoustic Mastery</div>
-              </div>
-              <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
-                <div className="text-slate-900 dark:text-white font-display font-bold text-2xl">1,500+</div>
-                <div className="text-slate-600 dark:text-slate-400 text-xs font-medium">Concerts & Galas</div>
-              </div>
-              <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm col-span-2 sm:col-span-1">
-                <div className="text-blue-600 dark:text-sky-400 font-display font-bold text-2xl">World Games</div>
-                <div className="text-slate-600 dark:text-slate-400 text-xs font-medium">Harmonious Partner</div>
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Link
-                to="/quote"
-                className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#0A188F] via-blue-700 to-sky-600 hover:from-blue-800 hover:to-sky-700 text-white font-bold text-sm tracking-wide shadow-md shadow-blue-900/20 transition-all flex items-center gap-2 active:scale-95"
-              >
-                <span>Request Event Tech Rider</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-
-              <Link
-                to="/ceo"
-                className="px-6 py-3.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-sm border border-slate-200 dark:border-slate-700 transition-all flex items-center gap-1.5"
-              >
-                <UserCheck className="w-4 h-4 text-[#0A188F] dark:text-sky-400" />
-                <span>CEO Profile</span>
-              </Link>
-
-              <a
-                href="tel:+233244843666"
-                className="text-xs text-slate-600 dark:text-slate-400 hover:text-[#0A188F] dark:hover:text-sky-400 flex items-center gap-1.5 transition-colors py-2 font-medium"
-              >
-                <Phone className="w-3.5 h-3.5 text-blue-600 dark:text-sky-400" />
-                <span>Call Director: +233 244 843 666</span>
-              </a>
-            </div>
-
-            {/* Credibility Stamp */}
-            <div className="flex items-center gap-2 pt-2 text-xs text-slate-500 dark:text-slate-400">
-              <ShieldCheck className="w-4 h-4 text-blue-600 dark:text-sky-400 shrink-0" />
-              <span>Context-Responsive Calibration • Yamaha & DiGiCo Consoles • Zero-Feedback Guarantee</span>
-            </div>
-
-          </div>
-
-          {/* Right Column: Interactive 5-Band EQ & Room Tuner */}
-          <div className="lg:col-span-5">
-            <AudioVisualizer />
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* 2. Genuine Client Logos Marquee / Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm transition-colors">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#0A188F] dark:text-sky-400 font-bold">
-              Trusted Technical Partners Across Ghana
-            </span>
-            <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
-              Choral Champions, Universities & National Institutions
-            </span>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 items-center pt-2">
-            {clientLogos.map((client) => (
-              <div
-                key={client.name}
-                className="p-3.5 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col items-center justify-center gap-2 h-24 hover:border-blue-300 dark:hover:border-blue-500 transition-colors"
-              >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  className="max-h-12 max-w-full object-contain dark:brightness-110"
-                />
-                <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono text-center line-clamp-1">
-                  {client.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
- 
-      {/* 3. Official YouTube Channel & Video Archive Spotlight (Prominently Featured) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-red-50/70 via-slate-50 to-white dark:from-red-950/20 dark:via-slate-900 dark:to-slate-900 rounded-3xl border border-red-100 dark:border-red-900/30 p-6 sm:p-10 shadow-sm space-y-8 transition-colors">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 dark:bg-red-950/60 border border-red-200 dark:border-red-900 text-xs font-mono text-red-700 dark:text-red-400 font-bold">
-                <YoutubeIcon className="w-4 h-4 text-red-600" />
-                <span>OFFICIAL YOUTUBE BROADCASTS • CHANNEL ID: UCw0DzAjtJQe9wO_6eEFSnyw</span>
-              </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-                Watch Live Productions & Studio Masterclasses
-              </h2>
-              <p className="text-slate-600 dark:text-slate-300 text-sm max-w-2xl leading-relaxed">
-                Experience why Ghana's premier choirs, artists, and corporations trust MIDO Productions. Stream full choral performances, Armed Forces band sessions, and audio masterclasses recorded at our Oyibi complex.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-3 shrink-0">
-              <Link
-                to="/portfolio"
-                className="px-5 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wide transition-all shadow-md flex items-center gap-2 active:scale-95"
-              >
-                <span>Browse All 9 Videos in Archive</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href="https://www.youtube.com/channel/UCw0DzAjtJQe9wO_6eEFSnyw"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-3 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-1.5 transition-colors"
-              >
-                <YoutubeIcon className="w-4 h-4 text-red-600" />
-                <span>@midoproductions</span>
-                <ExternalLink className="w-3 h-3 text-slate-400" />
-              </a>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredVideos.map((video) => (
-              <div
-                key={video.id}
-                className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-red-300 dark:hover:border-red-905 shadow-sm hover:shadow-xl transition-all overflow-hidden group flex flex-col justify-between"
-              >
-                <div>
-                  <div
-                    onClick={() => setSelectedVideo(video)}
-                    className="relative h-48 overflow-hidden bg-slate-900 cursor-pointer"
-                  >
-                    <img
-                      src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
-                      alt={video.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                        <Play className="w-5 h-5 fill-current ml-0.5" />
-                      </div>
-                    </div>
-                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-white/95 dark:bg-slate-900/90 text-slate-900 dark:text-slate-100 font-mono text-[10px] font-bold">
-                      {video.category}
-                    </span>
-                    <span className="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-black/80 text-white font-mono text-[10px] font-semibold">
-                      {video.duration}
-                    </span>
-                  </div>
-                  <div className="p-5 space-y-2">
-                    <h4
-                      onClick={() => setSelectedVideo(video)}
-                      className="font-bold text-slate-900 dark:text-white text-sm line-clamp-1 cursor-pointer hover:text-red-600 dark:hover:text-red-400 transition-colors"
-                    >
-                      {video.title}
-                    </h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed">
-                      {video.description}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="px-5 pb-5 pt-1 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-                  <button
-                    onClick={() => setSelectedVideo(video)}
-                    className="text-xs font-bold text-red-600 hover:text-red-700 font-bold flex items-center gap-1"
-                  >
-                    <span>Watch Video</span>
-                    <Play className="w-3 h-3 fill-current ml-0.5" />
-                  </button>
-                  <span className="text-[11px] font-mono text-slate-400 dark:text-slate-500">
-                    {video.published}
-                  </span>
-                </div>
-              </div>
-            ))}
+    <>
+      {/* Hero */}
+      <section className="relative isolate overflow-hidden bg-ink">
+        <Photo
+          src="photos/event-foh-led-stage"
+          alt="MIDO engineer at the front-of-house desk facing a lit stage and LED screen"
+          eager
+          className="absolute inset-0 -z-10 h-full w-full"
+        />
+        <div className="absolute inset-0 -z-10 bg-linear-to-r from-ink/95 via-ink/80 to-ink/55 md:via-ink/75 md:to-ink/20" />
+        <div className="container-site flex min-h-[78vh] flex-col justify-center py-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/75">
+            Sound &middot; Audio &middot; Video &mdash; Accra, Ghana
+          </p>
+          <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.1] text-white sm:text-6xl">
+            Where great events, media and learning come together.
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85">
+            MIDO Productions delivers professional event production, media services and technical training for churches,
+            businesses, institutions and creatives across Ghana.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Link to="/contact" className="btn-primary">Request a quote</Link>
+            <Link to="/work" className="btn border border-white/40 text-white hover:bg-white/10">See our work</Link>
           </div>
         </div>
       </section>
 
-      {/* 4. Interactive Soundboard A/B Comparison Tool */}
-      <SoundboardDemo />
-
-      {/* 5. The Dominic Ansah-Asare Leadership & Heritage (With Real Photo) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-blue-50/70 via-slate-50 to-white dark:from-blue-950/20 dark:via-slate-900 dark:to-slate-900 rounded-3xl border border-blue-100 dark:border-blue-900/30 p-8 sm:p-12 shadow-lg relative overflow-hidden transition-colors">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            
-            <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/70 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-xs font-mono text-[#0A188F] dark:text-sky-300 font-bold">
-                <Sliders className="w-3.5 h-3.5 text-blue-600 dark:text-sky-400" />
-                <span>LEADERSHIP & ENGINEERING HERITAGE</span>
-              </div>
-
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight leading-tight">
-                "Sound is acoustic science in service of musical emotion."
-              </h2>
-
-              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-                Under the leadership of <strong>Mr. Dominic Ansah-Asare</strong>—a distinguished British Council Music Technology alumnus under Dr. Gordon Ross, professional member of the Berklee College of Music, and celebrated judge on TV3’s <em>Mentor</em>—MIDO Productions has set the national benchmark for choral music engineering and high-profile event production.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700 shadow-sm">
-                  <div className="font-bold text-slate-900 dark:text-white text-xs mb-1">Context-Responsive Acoustics</div>
-                  <div className="text-[11px] text-slate-600 dark:text-slate-300 leading-snug">
-                    Tuning line arrays to match room reverberation times and architectural reflections.
-                  </div>
-                </div>
-                <div className="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700 shadow-sm">
-                  <div className="font-bold text-slate-900 dark:text-white text-xs mb-1">Choral Sound Engineer of the Year</div>
-                  <div className="text-[11px] text-slate-600 dark:text-slate-300 leading-snug">
-                    Honored at the Ghana Youth Choir Festival for pristine symphonic sound.
-                  </div>
-                </div>
-              </div>
-
-              <div className="pt-2 flex flex-wrap gap-4 items-center">
-                <Link
-                  to="/ceo"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#0A188F] hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md"
-                >
-                  <span>Explore CEO Profile & Career Archive</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  to="/about"
-                  className="text-xs text-slate-600 dark:text-slate-300 hover:text-[#0A188F] dark:hover:text-sky-400 font-semibold"
-                >
-                  About the 24-year journey &rarr;
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Column: Genuine Portrait of Dominic Ansah-Asare */}
-            <div className="lg:col-span-5 space-y-4">
-              <div className="relative rounded-2xl overflow-hidden border-4 border-white dark:border-slate-800 shadow-xl group">
-                <img
-                  src="/images/dominic/dominic-ansa-asare-portrait.webp"
-                  alt="Mr. Dominic Ansah-Asare, CEO of MIDO Productions Ltd"
-                  className="w-full h-80 object-cover object-top transform group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-5">
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-sky-400 font-bold block">
-                      FOUNDER & CHIEF ENGINEER
-                    </span>
-                    <h3 className="font-serif font-bold text-lg text-white">
-                      Mr. Dominic Ansah-Asare
-                    </h3>
-                    <p className="text-[11px] text-slate-300">
-                      British Council Scholar • Berklee Affiliate • TV3 Mentor
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-3.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs font-mono shadow-sm">
-                <span className="text-slate-600 dark:text-slate-300">Facility: Oyibi Production Complex</span>
-                <span className="text-emerald-700 dark:text-emerald-400 font-bold">● Active Operations</span>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* 5. 6 Core Production Pillars Overview */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
-          <div>
-            <span className="text-xs font-mono text-[#0A188F] dark:text-sky-400 uppercase tracking-wider font-bold block mb-2">
-              Comprehensive Capabilities
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-              6 Core Production Pillars
-            </h2>
-          </div>
-          <Link
-            to="/services"
-            className="text-xs font-bold text-[#0A188F] dark:text-sky-400 hover:text-blue-700 dark:hover:text-sky-300 flex items-center gap-1.5"
-          >
-            <span>View detailed technical packages</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+      {/* Intro + facts */}
+      <section className="container-site grid gap-12 py-20 sm:py-24 lg:grid-cols-12">
+        <div className="lg:col-span-7">
+          <p className="eyebrow">About MIDO</p>
+          <h2 className="mt-3 text-3xl font-semibold leading-tight sm:text-4xl">
+            We don&rsquo;t just capture moments. We create experiences that leave a lasting impression.
+          </h2>
+          <p className="mt-6 text-lg leading-relaxed text-muted">
+            MIDO Productions is a Ghanaian creative and technical production company. For over twenty years we have
+            provided sound, videography, live streaming and event coverage, combining creativity, technical expertise and
+            attention to detail to help organisations tell their stories well.
+          </p>
+          <Link to="/about" className="link-arrow mt-6">
+            More about us <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <dl className="grid grid-cols-2 gap-px self-end overflow-hidden rounded-md border border-line bg-line lg:col-span-5">
           {[
-            {
-              title: 'Live Concert & Choral Sound',
-              desc: 'High-headroom line-array dispersion, multi-channel FOH consoles, and specialized choir condenser microphones.',
-              tag: 'Flagship Craft',
-            },
-            {
-              title: 'Intelligent Concert Stage Lighting',
-              desc: 'Computer-controlled moving beam fixtures, wash profiles, and vocalist-safe theatrical haze for breathtaking atmosphere.',
-              tag: 'Atmosphere',
-            },
-            {
-              title: 'Concert LED Walls & 4K IMAG',
-              desc: 'High-refresh P2.9/P3.9 indoor and outdoor modular LED screens, multi-camera live switching, and instant magnification.',
-              tag: 'Visual Reach',
-            },
-            {
-              title: 'Global Live Streaming Broadcast',
-              desc: 'Cellular bonding broadcast units delivering low-latency 1080p/4K feeds with independent broadcast mastering.',
-              tag: 'Diaspora Reach',
-            },
-            {
-              title: 'Oyibi Recording & Mastering Studio',
-              desc: 'Acoustically isolated tracking suites at the Mido Complex for choral albums, film scores, and voiceovers.',
-              tag: 'Mido Complex',
-            },
-            {
-              title: 'Stage Staging, Trussing & Rentals',
-              desc: 'Heavy-duty certified aluminum box trussing, concert risers, concert grand pianos, and silenced diesel power generators.',
-              tag: 'Infrastructure',
-            },
-          ].map((srv) => (
-            <div
-              key={srv.title}
-              className="p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-400 dark:hover:border-sky-500 hover:shadow-xl transition-all flex flex-col justify-between shadow-sm"
-            >
-              <div>
-                <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-blue-50 dark:bg-blue-950/60 text-[#0A188F] dark:text-sky-300 font-bold border border-blue-200 dark:border-blue-900 mb-3 inline-block">
-                  {srv.tag}
-                </span>
-                <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white mb-2">
-                  {srv.title}
-                </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                  {srv.desc}
-                </p>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs">
-                <Link
-                  to="/services"
-                  className="text-[#0A188F] dark:text-sky-400 hover:text-blue-700 dark:hover:text-sky-300 font-bold flex items-center gap-1"
-                >
-                  <span>Explore Specs</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-                <Link
-                  to="/quote"
-                  className="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium"
-                >
-                  Get Quote &rarr;
-                </Link>
-              </div>
+            ['20+', 'Years of experience'],
+            ['300+', 'Clients served'],
+            ['3×', 'Chorale Sound Engineer of the Year, 2019–2021'],
+            ['Oyibi', 'Our own studio and production complex'],
+          ].map(([value, label]) => (
+            <div key={label} className="flex flex-col-reverse bg-white p-6">
+              <dt className="mt-1 text-sm text-muted">{label}</dt>
+              <dd className="font-serif text-3xl font-semibold text-brand">{value}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </section>
 
-      {/* 6. Historic Ghanaian Projects Preview with Real Photography */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 dark:bg-slate-900/60 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 sm:p-12 shadow-sm space-y-8 transition-colors">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      {/* Services */}
+      <section className="bg-mist py-20 sm:py-24">
+        <div className="container-site">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <span className="text-xs font-mono text-[#0A188F] dark:text-sky-400 uppercase tracking-wider font-bold block mb-2">
-                Proven Track Record
-              </span>
-              <h2 className="font-serif text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
-                Historic Choral & Corporate Collaborations
-              </h2>
+              <p className="eyebrow">What we do</p>
+              <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">From the studio to the stage</h2>
             </div>
-            <Link
-              to="/portfolio"
-              className="text-xs font-bold text-[#0A188F] dark:text-sky-400 hover:text-blue-700 dark:hover:text-sky-300 flex items-center gap-1"
-            >
-              <span>View full project portfolio</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+            <Link to="/services" className="link-arrow">
+              All services <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden group flex flex-col justify-between">
-              <div>
-                <div className="h-44 overflow-hidden">
-                  <img
-                    src="/images/portfolio/harmonious-chorale-stage.webp"
-                    alt="Harmonious Chorale at World Choir Games"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6 space-y-2">
-                  <span className="text-[10px] font-mono text-blue-600 dark:text-sky-400 font-bold uppercase">South Africa & Ghana</span>
-                  <h3 className="font-display font-bold text-base text-slate-900 dark:text-white">Harmonious Chorale Ghana</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Long-term technical audio partner, including live sound engineering at the 2018 World Choir Games in South Africa.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden group flex flex-col justify-between">
-              <div>
-                <div className="h-44 overflow-hidden">
-                  <img
-                    src="/images/portfolio/choral-concert-line-array.webp"
-                    alt="UG Easter Choral Festival Great Hall"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6 space-y-2">
-                  <span className="text-[10px] font-mono text-blue-600 dark:text-sky-400 font-bold uppercase">Great Hall, Legon</span>
-                  <h3 className="font-display font-bold text-base text-slate-900 dark:text-white">UG Easter Choral Festival</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Managing multi-choir staging, acoustic delay lines, and live radio broadcasting for over 2,500 collegiate patrons.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden group flex flex-col justify-between">
-              <div>
-                <div className="h-44 overflow-hidden">
-                  <img
-                    src="/images/portfolio/corporate-gala-lighting.webp"
-                    alt="CIMG National Awards Gala"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-6 space-y-2">
-                  <span className="text-[10px] font-mono text-blue-600 dark:text-sky-400 font-bold uppercase">AICC Accra</span>
-                  <h3 className="font-display font-bold text-base text-slate-900 dark:text-white">CIMG National Awards</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                    Flawless corporate speech intelligibility, high-refresh LED backdrop video walls, and live presidential protocol.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* 8. Direct Call to Action */}
-      <section className="max-w-5xl mx-auto px-4">
-        <div className="bg-gradient-to-r from-[#0A188F] via-blue-700 to-sky-700 text-white rounded-3xl p-10 sm:p-14 shadow-2xl text-center space-y-6">
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
-            Plan Your Next Major Production With <span className="text-sky-300">MIDO</span>
-          </h2>
-          <p className="text-blue-100 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Whether you are staging a cathedral symphony, an executive summit, or a large church convention, our engineers are ready to conduct an acoustic site assessment.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4 pt-2">
-            <Link
-              to="/quote"
-              className="px-7 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-[#0A188F] font-bold text-sm tracking-wide shadow-lg transition-transform active:scale-95"
-            >
-              Launch Interactive Tech Rider Builder
-            </Link>
-
-            <Link
-              to="/contact"
-              className="px-7 py-3.5 rounded-xl bg-white/15 hover:bg-white/25 text-white font-medium text-sm border border-white/30 backdrop-blur-sm transition-all"
-            >
-              Visit Oyibi Complex / Contact Us
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Interactive Modal Video Player for Featured Videos */}
-      {selectedVideo && (
-        <div
-          onClick={() => setSelectedVideo(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-3 sm:p-4 animate-in fade-in duration-200"
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            className="bg-white dark:bg-slate-900 rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-800 relative animate-in zoom-in-95 duration-200"
-          >
-            {/* Modal Top Bar */}
-            <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-950">
-              <div className="flex items-center gap-2.5 pr-4">
-                <YoutubeIcon className="w-5 h-5 text-red-600 shrink-0" />
-                <h3 className="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white line-clamp-1">
-                  {selectedVideo.title}
-                </h3>
-              </div>
-              <button
-                onClick={() => setSelectedVideo(null)}
-                className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 flex items-center justify-center transition-colors shrink-0"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            {/* YouTube IFrame Embed (Responsive 16:9) */}
-            <div className="relative aspect-video w-full bg-black">
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${selectedVideo.id}?autoplay=1&rel=0`}
-                title={selectedVideo.title}
-                className="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-
-            {/* Modal Footer Description */}
-            <div className="p-5 sm:p-6 bg-white dark:bg-slate-900 space-y-3">
-              <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="px-2.5 py-1 rounded bg-red-50 dark:bg-red-950/60 text-red-700 dark:text-red-400 font-mono text-xs font-bold border border-red-200 dark:border-red-900">
-                  {selectedVideo.category}
-                </span>
-                <span className="text-xs text-slate-500 dark:text-slate-400 font-mono">
-                  Channel ID: UCw0DzAjtJQe9wO_6eEFSnyw
-                </span>
-              </div>
-              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                {selectedVideo.description}
-              </p>
-              <div className="pt-2 flex flex-wrap justify-end gap-3">
+          <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((s) => (
+              <li key={s.id}>
                 <Link
-                  to="/portfolio"
-                  onClick={() => setSelectedVideo(null)}
-                  className="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors border border-slate-200 dark:border-slate-700"
+                  to={`/services#${s.id}`}
+                  className="group block h-full overflow-hidden rounded-md border border-line bg-white transition-shadow hover:shadow-lg"
                 >
-                  <span>All Portfolio Videos</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <Photo
+                    src={s.image}
+                    alt=""
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="aspect-[3/2] w-full"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold group-hover:text-brand">{s.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted">{s.summary}</p>
+                  </div>
                 </Link>
-                <a
-                  href={`https://www.youtube.com/watch?v=${selectedVideo.id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors"
-                >
-                  <YoutubeIcon className="w-3.5 h-3.5" />
-                  <span>Open on YouTube App</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
-              </div>
-            </div>
-          </div>
+              </li>
+            ))}
+          </ul>
         </div>
-      )}
+      </section>
 
-    </div>
+      {/* Training feature */}
+      <section className="container-site grid items-center gap-12 py-20 sm:py-24 lg:grid-cols-2">
+        <Photo
+          src="photos/hands-on-training"
+          alt="Participants working hands-on with mixing desks at the Live Sound Management seminar"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          className="aspect-[4/3] w-full rounded-md"
+        />
+        <div>
+          <p className="eyebrow">Music Solutions School</p>
+          <h2 className="mt-3 text-3xl font-semibold leading-tight sm:text-4xl">Practical training for the people behind the sound</h2>
+          <p className="mt-5 text-lg leading-relaxed text-muted">
+            Through the Music Solutions School (M.S.S.), we train church sound teams, choir directors and aspiring engineers
+            in sound management, music and media production, with hands-on time on real equipment.
+          </p>
+          <Link to="/training" className="btn-secondary mt-8">Explore training</Link>
+        </div>
+      </section>
+
+      {/* Who we serve */}
+      <section className="border-y border-line">
+        <div className="container-site py-20 sm:py-24">
+          <p className="eyebrow">Who we serve</p>
+          <h2 className="mt-3 max-w-2xl text-3xl font-semibold sm:text-4xl">Production solutions for every kind of gathering</h2>
+          <ul className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {audiences.map((a) => (
+              <li key={a.title} className="border-t-2 border-brand pt-5">
+                <h3 className="text-lg font-semibold">{a.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{a.text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Videos */}
+      <section className="container-site py-20 sm:py-24">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="eyebrow">Mido TV</p>
+            <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">Recent productions</h2>
+          </div>
+          <Link to="/work" className="link-arrow">
+            More of our work <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        </div>
+        <div className="mt-12">
+          <VideoGrid videos={videos.slice(0, 3)} />
+        </div>
+      </section>
+
+      {/* Clients */}
+      <section className="bg-mist py-16">
+        <div className="container-site">
+          <p className="text-center text-sm font-medium text-muted">Trusted by choirs, churches, institutions and brands, including</p>
+          <ul className="mt-8 grid grid-cols-2 items-center gap-6 sm:grid-cols-3 lg:grid-cols-6">
+            {clients.map((c) => (
+              <li key={c.name} className="flex h-20 items-center justify-center rounded-md bg-white p-4">
+                <img src={c.logo} alt={c.name} loading="lazy" className="max-h-12 max-w-full object-contain" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <CtaBand />
+    </>
   );
 }
