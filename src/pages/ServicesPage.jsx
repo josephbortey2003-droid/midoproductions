@@ -115,17 +115,17 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="pt-28 pb-20 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+    <div className="pt-28 pb-20 space-y-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors duration-300">
       
       {/* Header */}
       <div className="max-w-3xl space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono text-[#0A188F] font-bold">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-xs font-mono text-[#0A188F] dark:text-sky-300 font-bold">
           <span>OUR PRODUCTION SERVICES</span>
         </div>
-        <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight">
+        <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white tracking-tight">
           Comprehensive Audio-Visual & Stage Engineering.
         </h1>
-        <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
           From sound design for 120-voice choirs to arena-scale concert lighting, LED screens, and international broadcast streaming—MIDO delivers turnkey production under one accountable roof.
         </p>
       </div>
@@ -137,62 +137,62 @@ export default function ServicesPage() {
           return (
             <div
               key={s.id}
-              className="p-8 rounded-3xl bg-white border border-slate-200 hover:border-blue-400 hover:shadow-xl transition-all flex flex-col justify-between shadow-sm overflow-hidden"
+              className="p-8 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-400 dark:hover:border-sky-500 hover:shadow-xl transition-all flex flex-col justify-between shadow-sm overflow-hidden"
             >
               <div className="space-y-5">
                 
                 {/* Real Image Header */}
-                <div className="rounded-2xl overflow-hidden h-48 border border-slate-200 relative group">
+                <div className="rounded-2xl overflow-hidden h-48 border border-slate-200 dark:border-slate-800 relative group">
                   <img
                     src={s.image}
                     alt={s.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 right-3">
-                    <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/95 text-[#0A188F] border border-blue-200 font-bold shadow-sm">
+                    <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/95 dark:bg-slate-900/90 text-[#0A188F] dark:text-sky-300 border border-blue-200 dark:border-blue-900 font-bold shadow-sm">
                       {s.badge}
                     </span>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-[#0A188F] shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 flex items-center justify-center text-[#0A188F] dark:text-sky-300 shrink-0">
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h2 className="font-display font-bold text-xl sm:text-2xl text-slate-900">
+                    <h2 className="font-display font-bold text-xl sm:text-2xl text-slate-900 dark:text-white">
                       {s.title}
                     </h2>
-                    <p className="text-xs font-semibold text-blue-700">
+                    <p className="text-xs font-semibold text-blue-700 dark:text-sky-400">
                       {s.subtitle}
                     </p>
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
                   {s.description}
                 </p>
 
                 {/* Features List */}
-                <div className="space-y-2 pt-3 border-t border-slate-100">
-                  <div className="text-[11px] font-mono text-[#0A188F] uppercase tracking-wider font-bold">
+                <div className="space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800">
+                  <div className="text-[11px] font-mono text-[#0A188F] dark:text-sky-400 uppercase tracking-wider font-bold">
                     Technical Specifications:
                   </div>
                   {s.features.map((feat, i) => (
-                    <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0 mt-0.5" />
+                    <div key={i} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 dark:text-sky-400 shrink-0 mt-0.5" />
                       <span className="leading-snug">{feat}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-[11px] text-slate-600">
-                  <strong className="text-slate-900">Ideal For:</strong> {s.ideal}
+                <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-[11px] text-slate-600 dark:text-slate-300">
+                  <strong className="text-slate-900 dark:text-white">Ideal For:</strong> {s.ideal}
                 </div>
 
               </div>
 
-              <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
+              <div className="mt-6 pt-5 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                 <Link
                   to="/quote"
                   className="px-5 py-2.5 rounded-xl bg-[#0A188F] hover:bg-blue-800 text-white font-bold text-xs uppercase tracking-wide transition-all shadow-sm flex items-center gap-1.5"
@@ -203,9 +203,9 @@ export default function ServicesPage() {
 
                 <a
                   href="tel:+233244843666"
-                  className="text-xs text-slate-600 hover:text-[#0A188F] flex items-center gap-1 font-mono"
+                  className="text-xs text-slate-600 dark:text-slate-400 hover:text-[#0A188F] dark:hover:text-sky-400 flex items-center gap-1 font-mono"
                 >
-                  <Phone className="w-3.5 h-3.5 text-blue-600" />
+                  <Phone className="w-3.5 h-3.5 text-blue-600 dark:text-sky-400" />
                   <span>Call Engineer</span>
                 </a>
               </div>
@@ -216,37 +216,37 @@ export default function ServicesPage() {
       </div>
 
       {/* Turnkey Framework */}
-      <section className="bg-slate-50 rounded-3xl border border-slate-200 p-8 sm:p-12 space-y-8 shadow-sm">
+      <section className="bg-slate-50 dark:bg-slate-900/60 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 sm:p-12 space-y-8 shadow-sm transition-colors">
         <div className="max-w-2xl space-y-2">
-          <span className="text-xs font-mono text-[#0A188F] uppercase tracking-wider font-bold">
+          <span className="text-xs font-mono text-[#0A188F] dark:text-sky-400 uppercase tracking-wider font-bold">
             Engagement Framework
           </span>
-          <h2 className="font-serif text-3xl font-bold text-slate-900">
+          <h2 className="font-serif text-3xl font-bold text-slate-900 dark:text-white">
             How We Deliver Your Event
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-            <div className="text-2xl font-mono font-bold text-blue-600">01. Survey</div>
-            <h3 className="font-bold text-base text-slate-900">Acoustic & Venue Inspection</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
+          <div className="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 shadow-sm space-y-3">
+            <div className="text-2xl font-mono font-bold text-blue-600 dark:text-sky-400">01. Survey</div>
+            <h3 className="font-bold text-base text-slate-900 dark:text-white">Acoustic & Venue Inspection</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               We analyze room dimensions, RT60 reverberation, generator tap points, and sightlines to formulate an exact tech rider.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-            <div className="text-2xl font-mono font-bold text-blue-600">02. Calibration</div>
-            <h3 className="font-bold text-base text-slate-900">Rigging & Sound Check</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
+          <div className="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 shadow-sm space-y-3">
+            <div className="text-2xl font-mono font-bold text-blue-600 dark:text-sky-400">02. Calibration</div>
+            <h3 className="font-bold text-base text-slate-900 dark:text-white">Rigging & Sound Check</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               Line arrays are laser-aligned, choir microphones polarity-checked, and lighting cues pre-programmed during rehearsals.
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
-            <div className="text-2xl font-mono font-bold text-blue-600">03. Execution</div>
-            <h3 className="font-bold text-base text-slate-900">Live Engineering & Broadcast</h3>
-            <p className="text-xs text-slate-600 leading-relaxed">
+          <div className="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 shadow-sm space-y-3">
+            <div className="text-2xl font-mono font-bold text-blue-600 dark:text-sky-400">03. Execution</div>
+            <h3 className="font-bold text-base text-slate-900 dark:text-white">Live Engineering & Broadcast</h3>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
               Dedicated FOH, monitor, lighting, and streaming directors manage the event in real-time with zero feedback and redundant backups.
             </p>
           </div>

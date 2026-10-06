@@ -51,7 +51,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="pt-28 pb-20 space-y-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+    <div className="pt-28 pb-20 space-y-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors duration-300">
       
       {/* 1. Page Header with Official Logo */}
       <div className="max-w-3xl space-y-4">
@@ -59,22 +59,22 @@ export default function AboutPage() {
           <img
             src="/mido-logo-badge.jpg"
             alt="MIDO Official Emblem"
-            className="h-10 w-auto rounded-lg border border-blue-200 p-0.5 bg-[#001080]"
+            className="h-10 w-auto rounded-lg border border-blue-200 dark:border-blue-800 p-0.5 bg-[#001080]"
           />
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono text-[#0A188F] font-bold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-xs font-mono text-[#0A188F] dark:text-sky-300 font-bold">
             <span>ABOUT MIDO PRODUCTIONS LTD</span>
           </div>
         </div>
-        <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight">
+        <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white tracking-tight">
           A Quarter-Century of Acoustic Excellence & African Art Music.
         </h1>
-        <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
           Founded in 2000, MIDO Productions Ltd has grown from an ambitious music studio in Accra into West Africa’s most respected technical event production firm and the definitive gold standard for choral sound engineering.
         </p>
       </div>
 
       {/* 2. Founder Showcase Section (Dominic Ansah-Asare - Real Photos from Old Site) */}
-      <section id="ceo" className="bg-gradient-to-br from-blue-50/70 via-slate-50 to-white rounded-3xl border border-blue-100 p-8 sm:p-12 shadow-lg relative overflow-hidden">
+      <section id="ceo" className="bg-gradient-to-br from-blue-50/70 via-slate-50 to-white dark:from-blue-950/20 dark:via-slate-900 dark:to-slate-900 rounded-3xl border border-blue-100 dark:border-blue-900/30 p-8 sm:p-12 shadow-lg relative overflow-hidden transition-colors">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
@@ -82,7 +82,7 @@ export default function AboutPage() {
           <div className="lg:col-span-5 space-y-4">
             
             {/* Primary Portrait from midoproductions.com/ceo/ */}
-            <div className="relative rounded-2xl overflow-hidden border-2 border-white shadow-xl group">
+            <div className="relative rounded-2xl overflow-hidden border-2 border-white dark:border-slate-800 shadow-xl group">
               <img
                 src="/images/dominic/dominic-ansa-asare-portrait.webp"
                 alt="Mr. Dominic Ansah-Asare, CEO of MIDO Productions Ltd"
@@ -103,7 +103,7 @@ export default function AboutPage() {
 
             {/* In Action Soundboard Photo & Teaching Photo Grid */}
             <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm relative group">
+              <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm relative group">
                 <img
                   src="/images/dominic/dominic-ansa-asare-soundboard.webp"
                   alt="Dominic Ansah-Asare mixing live on digital console"
@@ -114,7 +114,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="rounded-xl overflow-hidden border border-slate-200 shadow-sm relative group">
+              <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm relative group">
                 <img
                   src="/images/dominic/dominic-ansa-asare-teaching.webp"
                   alt="Dominic Ansah-Asare conducting training at Music Solutions School"
@@ -131,20 +131,20 @@ export default function AboutPage() {
           {/* Right Column: Founder Biography & Pedigree */}
           <div className="lg:col-span-7 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-blue-100 border border-blue-200 flex items-center justify-center text-[#0A188F]">
+              <div className="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 flex items-center justify-center text-[#0A188F] dark:text-sky-300">
                 <Music className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-xs font-mono text-[#0A188F] font-bold uppercase tracking-wider block">
+                <span className="text-xs font-mono text-[#0A188F] dark:text-sky-400 font-bold uppercase tracking-wider block">
                   Executive Profile
                 </span>
-                <h2 className="font-serif font-bold text-2xl sm:text-3xl text-slate-900">
+                <h2 className="font-serif font-bold text-2xl sm:text-3xl text-slate-900 dark:text-white">
                   Leadership Rooted in Musical Heritage
                 </h2>
               </div>
             </div>
 
-            <div className="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed font-sans">
+            <div className="space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
               <p>
                 Coming from a deeply celebrated Ghanaian musical lineage—his father was the revered <strong>Julius Ansa-Asare</strong>—Dominic Ansah-Asare graduated from the University of Ghana, Legon, before dedicating his life to acoustic science, sound engineering, and event production.
               </p>
@@ -157,9 +157,9 @@ export default function AboutPage() {
             </div>
 
             {/* Founder Quote */}
-            <div className="p-4 rounded-xl bg-white border-l-4 border-blue-600 text-xs sm:text-sm italic text-slate-800 shadow-sm">
+            <div className="p-4 rounded-xl bg-white dark:bg-slate-800/80 border-l-4 border-blue-600 dark:border-sky-400 text-xs sm:text-sm italic text-slate-800 dark:text-slate-200 shadow-sm">
               "We do not simply amplify sound; we respect the acoustic architecture of the room and the emotional dignity of the human voice."
-              <div className="mt-1 font-mono not-italic text-[11px] text-[#0A188F] font-bold">
+              <div className="mt-1 font-mono not-italic text-[11px] text-[#0A188F] dark:text-sky-400 font-bold">
                 — Dominic Ansah-Asare, CEO & Chief Audio Engineer
               </div>
             </div>
@@ -171,13 +171,13 @@ export default function AboutPage() {
                 return (
                   <div
                     key={cred.title}
-                    className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-1 hover:border-blue-300 transition-colors"
+                    className="p-3.5 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 shadow-sm space-y-1 hover:border-blue-300 dark:hover:border-blue-500 transition-colors"
                   >
                     <div className="flex items-center gap-2">
-                      <Icon className="w-4 h-4 text-blue-600 shrink-0" />
-                      <div className="font-bold text-slate-900 text-xs">{cred.title}</div>
+                      <Icon className="w-4 h-4 text-blue-600 dark:text-sky-400 shrink-0" />
+                      <div className="font-bold text-slate-900 dark:text-white text-xs">{cred.title}</div>
                     </div>
-                    <div className="text-[11px] text-slate-600 leading-snug pl-6">
+                    <div className="text-[11px] text-slate-600 dark:text-slate-300 leading-snug pl-6">
                       {cred.detail}
                     </div>
                   </div>
@@ -193,13 +193,13 @@ export default function AboutPage() {
       {/* 3. The Context-Responsive Engineering Methodology */}
       <section className="space-y-8">
         <div className="max-w-3xl space-y-3">
-          <span className="text-xs font-mono text-[#0A188F] uppercase tracking-wider font-bold">
+          <span className="text-xs font-mono text-[#0A188F] dark:text-sky-400 uppercase tracking-wider font-bold">
             Our Proprietary Approach
           </span>
-          <h2 className="font-serif text-3xl font-bold text-slate-900">
+          <h2 className="font-serif text-3xl font-bold text-slate-900 dark:text-white">
             The "Context-Responsive" Engineering Philosophy
           </h2>
-          <p className="text-slate-600 text-sm leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
             While standard PA providers use generic, one-size-fits-all volume presets, MIDO Productions approaches every live event through a 4-step acoustic discipline.
           </p>
         </div>
@@ -208,15 +208,15 @@ export default function AboutPage() {
           {methodology.map((m) => (
             <div
               key={m.step}
-              className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3 relative overflow-hidden hover:shadow-md transition-shadow"
+              className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3 relative overflow-hidden hover:shadow-md transition-shadow"
             >
-              <div className="text-4xl font-display font-black text-blue-100">
+              <div className="text-4xl font-display font-black text-blue-100 dark:text-slate-800">
                 {m.step}
               </div>
-              <h3 className="font-bold text-base text-slate-900">
+              <h3 className="font-bold text-base text-slate-900 dark:text-white">
                 {m.title}
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 {m.desc}
               </p>
             </div>
@@ -225,15 +225,15 @@ export default function AboutPage() {
       </section>
 
       {/* 4. Facilities: Oyibi Complex & Music Solutions School with Real Production Images */}
-      <section className="bg-slate-50 rounded-3xl border border-slate-200 p-8 sm:p-12 space-y-10 shadow-sm">
+      <section className="bg-slate-50 dark:bg-slate-900/60 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 sm:p-12 space-y-10 shadow-sm transition-colors">
         <div className="max-w-2xl space-y-2">
-          <span className="text-xs font-mono text-[#0A188F] uppercase tracking-wider font-bold">
+          <span className="text-xs font-mono text-[#0A188F] dark:text-sky-400 uppercase tracking-wider font-bold">
             Physical Facilities & Operations
           </span>
-          <h2 className="font-serif text-3xl font-bold text-slate-900">
+          <h2 className="font-serif text-3xl font-bold text-slate-900 dark:text-white">
             The Mido Productions Infrastructure
           </h2>
-          <p className="text-slate-600 text-sm">
+          <p className="text-slate-600 dark:text-slate-300 text-sm">
             Two strategic locations serving greater Accra and national touring productions.
           </p>
         </div>
@@ -241,9 +241,9 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* Oyibi Hub */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-4 shadow-sm flex flex-col justify-between">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4 shadow-sm flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="rounded-xl overflow-hidden border border-slate-200 h-48">
+              <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 h-48">
                 <img
                   src="/images/production/studio-production-oyibi.webp"
                   alt="Mido Productions Oyibi Studio Complex"
@@ -252,33 +252,33 @@ export default function AboutPage() {
               </div>
 
               <div>
-                <span className="text-[11px] font-mono text-[#0A188F] font-bold uppercase">
+                <span className="text-[11px] font-mono text-[#0A188F] dark:text-sky-300 font-bold uppercase">
                   HEADQUARTERS & TECHNICAL COMPLEX
                 </span>
-                <h3 className="font-display font-bold text-xl text-slate-900 mt-1">
+                <h3 className="font-display font-bold text-xl text-slate-900 dark:text-white mt-1">
                   Mido Productions Complex — Oyibi
                 </h3>
-                <div className="text-xs text-slate-600 mt-1 flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-blue-600" />
+                <div className="text-xs text-slate-600 dark:text-slate-400 mt-1 flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-blue-600 dark:text-sky-400" />
                   <span>Near Gbortsui, Oyibi, Greater Accra Region</span>
                 </div>
               </div>
 
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 Our state-of-the-art facility housing professional tracking and mastering studios, live sound gear warehousing, fleet staging docks, and the affiliated <strong>Music Solutions School</strong> for audio training.
               </p>
             </div>
 
-            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-500">
+            <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400">
               <span>Contact: +233 540 235 560</span>
-              <span className="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Active Complex</span>
+              <span className="text-emerald-700 dark:text-emerald-400 font-bold bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800">Active Complex</span>
             </div>
           </div>
 
           {/* Music Solutions School & Audio Academy Hub */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-4 shadow-sm flex flex-col justify-between">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 space-y-4 shadow-sm flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="rounded-xl overflow-hidden border border-slate-200 h-48">
+              <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 h-48">
                 <img
                   src="/images/dominic/dominic-ansa-asare-teaching.webp"
                   alt="Music Solutions School Audio Engineering Masterclass"
@@ -287,26 +287,26 @@ export default function AboutPage() {
               </div>
 
               <div>
-                <span className="text-[11px] font-mono text-[#0A188F] font-bold uppercase">
+                <span className="text-[11px] font-mono text-[#0A188F] dark:text-sky-300 font-bold uppercase">
                   TRAINING ACADEMY & MASTERCLASSES
                 </span>
-                <h3 className="font-display font-bold text-xl text-slate-900 mt-1">
+                <h3 className="font-display font-bold text-xl text-slate-900 dark:text-white mt-1">
                   Music Solutions School (MSS) — Oyibi
                 </h3>
-                <div className="text-xs text-slate-600 mt-1 flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-blue-600" />
+                <div className="text-xs text-slate-600 dark:text-slate-400 mt-1 flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-blue-600 dark:text-sky-400" />
                   <span>Located at the Mido Productions Complex, Oyibi</span>
                 </div>
               </div>
 
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 Our educational division spearheaded by Dominic Ansah-Asare. Offering rigorous practical training in live sound management, digital FOH console operation, vocal technique, and choir director acoustic masterclasses.
               </p>
             </div>
 
-            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-500">
+            <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-mono text-slate-500 dark:text-slate-400">
               <span>Enrollment: 050 265 1282 / 020 401 0267</span>
-              <span className="text-blue-700 font-bold bg-blue-50 px-2 py-0.5 rounded border border-blue-200">Academy Hub</span>
+              <span className="text-blue-700 dark:text-sky-400 font-bold bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-800">Academy Hub</span>
             </div>
           </div>
 

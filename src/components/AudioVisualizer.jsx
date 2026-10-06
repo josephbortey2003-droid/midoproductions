@@ -399,7 +399,7 @@ export default function AudioVisualizer() {
   }, [isPlaying]);
 
   return (
-    <div className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+    <div className="bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden transition-colors duration-300">
       
       {/* Hidden Audio Element with loop enabled */}
       <audio
@@ -416,22 +416,22 @@ export default function AudioVisualizer() {
       />
 
       {/* Top Header & Audiomack Badge */}
-      <div className="p-4 sm:p-6 border-b border-slate-100 bg-slate-50/70 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="p-4 sm:p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-100 text-[#0A188F] text-[11px] font-mono font-bold uppercase tracking-wide">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-100 dark:bg-blue-950/80 text-[#0A188F] dark:text-sky-300 text-[11px] font-mono font-bold uppercase tracking-wide">
               <Sliders className="w-3.5 h-3.5" />
               <span>Interactive Acoustic Calibration Suite</span>
             </span>
-            <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 text-[11px] font-mono font-bold">
+            <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-900 dark:text-amber-300 text-[11px] font-mono font-bold">
               <Disc3 className="w-3.5 h-3.5 animate-spin" />
               <span>Audiomack Player</span>
             </span>
           </div>
-          <h3 className="font-serif text-lg sm:text-xl font-bold text-slate-900 mt-1">
+          <h3 className="font-serif text-lg sm:text-xl font-bold text-slate-900 dark:text-white mt-1">
             Real Music EQ & Live Acoustic Tuning
           </h3>
-          <p className="text-xs text-slate-600 mt-0.5 max-w-xl">
+          <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5 max-w-xl">
             Stream real tracks from MIDO Productions’ Audiomack catalog and test how our acoustic tuning sculpts sub-bass foundation, hall reflections, and choral diction in real-time.
           </p>
         </div>
@@ -451,10 +451,10 @@ export default function AudioVisualizer() {
       </div>
 
       {/* Audiomack Song Selector Tabs */}
-      <div className="px-4 sm:px-6 pt-4 pb-2 bg-white border-b border-slate-100">
-        <div className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-bold mb-2 flex items-center justify-between">
+      <div className="px-4 sm:px-6 pt-4 pb-2 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800">
+        <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider font-bold mb-2 flex items-center justify-between">
           <span>Select Official MIDO Song To Calibrate:</span>
-          <span className="text-[#0A188F] font-bold">3 Mastered Tracks</span>
+          <span className="text-[#0A188F] dark:text-sky-400 font-bold">3 Mastered Tracks</span>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
           {tracks.map((t, idx) => {
@@ -465,13 +465,13 @@ export default function AudioVisualizer() {
                 onClick={() => switchTrack(idx)}
                 className={`p-3 rounded-2xl border text-left transition-all flex items-start gap-3 ${
                   isSelected
-                    ? 'bg-blue-50/80 border-[#0A188F] shadow-sm ring-1 ring-[#0A188F]'
-                    : 'bg-slate-50 hover:bg-slate-100 border-slate-200 text-slate-700'
+                    ? 'bg-blue-50/80 dark:bg-blue-950/70 border-[#0A188F] dark:border-sky-400 shadow-sm ring-1 ring-[#0A188F] dark:ring-sky-400'
+                    : 'bg-slate-50 dark:bg-slate-800/80 hover:bg-slate-100 dark:hover:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300'
                 }`}
               >
                 <div
                   className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 mt-0.5 ${
-                    isSelected ? 'bg-[#0A188F] text-white' : 'bg-slate-200 text-slate-600'
+                    isSelected ? 'bg-[#0A188F] text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
                   }`}
                 >
                   {isSelected && isPlaying ? (
@@ -482,14 +482,14 @@ export default function AudioVisualizer() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center justify-between gap-1">
-                    <span className="font-bold text-xs text-slate-900 truncate">
+                    <span className="font-bold text-xs text-slate-900 dark:text-white truncate">
                       {t.title}
                     </span>
-                    <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-white text-slate-600 border border-slate-200 shrink-0">
+                    <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 shrink-0">
                       {t.tag}
                     </span>
                   </div>
-                  <p className="text-[11px] text-slate-500 truncate mt-0.5">
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400 truncate mt-0.5">
                     {t.artist}
                   </p>
                 </div>
@@ -546,14 +546,14 @@ export default function AudioVisualizer() {
         </div>
 
         {/* Playback Controls & Volume Bar */}
-        <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-wrap items-center justify-between gap-4">
+        <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <button
               onClick={togglePlay}
               className={`px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all shadow-md active:scale-95 ${
                 isPlaying
                   ? 'bg-amber-600 hover:bg-amber-700 text-white shadow-amber-900/20'
-                  : 'bg-[#0A188F] hover:bg-blue-800 text-white shadow-blue-900/20'
+                  : 'bg-[#0A188F] hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white shadow-blue-900/20'
               }`}
             >
               {isPlaying ? (
@@ -569,7 +569,7 @@ export default function AudioVisualizer() {
               )}
             </button>
 
-            <span className="text-xs text-slate-600 font-medium hidden sm:inline">
+            <span className="text-xs text-slate-600 dark:text-slate-400 font-medium hidden sm:inline">
               {isPlaying ? 'Live Web Audio EQ processing is active.' : 'Tap play to audition real audio response.'}
             </span>
           </div>
@@ -578,13 +578,13 @@ export default function AudioVisualizer() {
           <div className="flex items-center gap-2.5 ml-auto sm:ml-0">
             <button
               onClick={toggleMute}
-              className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 transition-colors"
+              className="p-1.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
               title={isMuted ? 'Unmute' : 'Mute'}
             >
               {isMuted || volume === 0 ? (
-                <VolumeX className="w-4 h-4 text-red-600" />
+                <VolumeX className="w-4 h-4 text-red-600 dark:text-red-400" />
               ) : (
-                <Volume2 className="w-4 h-4 text-[#0A188F]" />
+                <Volume2 className="w-4 h-4 text-[#0A188F] dark:text-sky-400" />
               )}
             </button>
             <input
@@ -594,10 +594,10 @@ export default function AudioVisualizer() {
               step="0.05"
               value={isMuted ? 0 : volume}
               onChange={(e) => handleVolumeChange(e.target.value)}
-              className="w-20 sm:w-28 accent-[#0A188F] cursor-pointer"
+              className="w-20 sm:w-28 accent-[#0A188F] dark:accent-sky-400 cursor-pointer"
               aria-label="Audio Volume"
             />
-            <span className="text-[11px] font-mono text-slate-500 w-9 text-right">
+            <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 w-9 text-right">
               {isMuted ? '0%' : `${Math.round(volume * 100)}%`}
             </span>
           </div>
@@ -607,16 +607,16 @@ export default function AudioVisualizer() {
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="font-bold text-xs uppercase tracking-wider text-slate-900">
+              <span className="font-bold text-xs uppercase tracking-wider text-slate-900 dark:text-white">
                 Acoustic Frequency Faders (±12 dB)
               </span>
-              <span className="text-[10px] font-mono text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+              <span className="text-[10px] font-mono text-blue-700 dark:text-sky-300 bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-900">
                 Real-Time Biquad DSP
               </span>
             </div>
             <button
               onClick={resetBands}
-              className="text-xs text-slate-500 hover:text-[#0A188F] flex items-center gap-1 font-mono transition-colors"
+              className="text-xs text-slate-500 dark:text-slate-400 hover:text-[#0A188F] dark:hover:text-sky-400 flex items-center gap-1 font-mono transition-colors"
               title="Reset all bands to 0 dB"
             >
               <RotateCcw className="w-3 h-3" />
@@ -629,25 +629,25 @@ export default function AudioVisualizer() {
             {eqBands.map((band, idx) => (
               <div
                 key={band.id}
-                className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between hover:border-blue-300 transition-colors"
+                className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex flex-col justify-between hover:border-blue-300 dark:hover:border-sky-500 transition-colors"
               >
                 {/* Header */}
                 <div className="flex items-center justify-between sm:flex-col sm:items-start gap-1">
                   <div>
-                    <span className="font-mono font-bold text-xs text-[#0A188F] block">
+                    <span className="font-mono font-bold text-xs text-[#0A188F] dark:text-sky-400 block">
                       {band.freq}
                     </span>
-                    <span className="text-[11px] font-medium text-slate-800 block">
+                    <span className="text-[11px] font-medium text-slate-800 dark:text-slate-200 block">
                       {band.label}
                     </span>
                   </div>
                   <span
                     className={`font-mono text-xs font-bold px-2 py-0.5 rounded ${
                       band.gain > 0
-                        ? 'bg-blue-100 text-[#0A188F]'
+                        ? 'bg-blue-100 dark:bg-blue-950 text-[#0A188F] dark:text-sky-300'
                         : band.gain < 0
-                        ? 'bg-amber-100 text-amber-900'
-                        : 'bg-slate-200 text-slate-600'
+                        ? 'bg-amber-100 dark:bg-amber-950 text-amber-900 dark:text-amber-300'
+                        : 'bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
                     }`}
                   >
                     {band.gain > 0 ? `+${band.gain}` : band.gain} dB
@@ -663,10 +663,10 @@ export default function AudioVisualizer() {
                     step="1"
                     value={band.gain}
                     onChange={(e) => handleBandChange(idx, e.target.value)}
-                    className="w-full accent-[#0A188F] cursor-pointer"
+                    className="w-full accent-[#0A188F] dark:accent-sky-400 cursor-pointer"
                     aria-label={`${band.label} gain`}
                   />
-                  <div className="flex justify-between text-[9px] font-mono text-slate-400 mt-1">
+                  <div className="flex justify-between text-[9px] font-mono text-slate-400 dark:text-slate-500 mt-1">
                     <span>-12dB</span>
                     <span>0</span>
                     <span>+12dB</span>
@@ -674,7 +674,7 @@ export default function AudioVisualizer() {
                 </div>
 
                 {/* Acoustic Role */}
-                <div className="text-[10px] text-slate-500 font-mono border-t border-slate-200 pt-1.5 line-clamp-1">
+                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-mono border-t border-slate-200 dark:border-slate-700 pt-1.5 line-clamp-1">
                   {band.role}
                 </div>
               </div>
@@ -684,7 +684,7 @@ export default function AudioVisualizer() {
 
         {/* Acoustic Preset Selector Buttons */}
         <div className="space-y-2 pt-2">
-          <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-bold block">
+          <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-wider font-bold block">
             Acoustic Preset Configurations:
           </span>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -694,8 +694,8 @@ export default function AudioVisualizer() {
                 onClick={() => applyPreset(key)}
                 className={`p-3 rounded-xl border text-left transition-all ${
                   activePreset === key
-                    ? 'bg-[#0A188F] text-white border-[#0A188F] shadow-md shadow-blue-900/20'
-                    : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200'
+                    ? 'bg-[#0A188F] dark:bg-blue-600 text-white border-[#0A188F] dark:border-blue-500 shadow-md shadow-blue-900/20'
+                    : 'bg-white dark:bg-slate-800/80 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-700'
                 }`}
               >
                 <div className="flex items-center gap-1.5 font-bold text-xs truncate">
@@ -704,7 +704,7 @@ export default function AudioVisualizer() {
                 </div>
                 <div
                   className={`text-[10px] truncate mt-1 ${
-                    activePreset === key ? 'text-blue-100' : 'text-slate-500'
+                    activePreset === key ? 'text-blue-100 dark:text-sky-200' : 'text-slate-500 dark:text-slate-400'
                   }`}
                 >
                   {p.name.includes('(') ? `(${p.name.split('(')[1]}` : ''}
@@ -715,10 +715,10 @@ export default function AudioVisualizer() {
 
           {/* Active Preset Explanation Note */}
           {presets[activePreset] && (
-            <div className="p-3 rounded-xl bg-blue-50/70 border border-blue-100 text-xs text-slate-700 flex items-start gap-2.5 mt-2">
-              <Info className="w-4 h-4 text-[#0A188F] shrink-0 mt-0.5" />
+            <div className="p-3 rounded-xl bg-blue-50/70 dark:bg-blue-950/50 border border-blue-100 dark:border-blue-900 text-xs text-slate-700 dark:text-slate-200 flex items-start gap-2.5 mt-2">
+              <Info className="w-4 h-4 text-[#0A188F] dark:text-sky-400 shrink-0 mt-0.5" />
               <div>
-                <strong className="text-[#0A188F] font-semibold">
+                <strong className="text-[#0A188F] dark:text-sky-300 font-semibold">
                   Acoustic Purpose ({presets[activePreset].name}):
                 </strong>{' '}
                 {presets[activePreset].explanation}

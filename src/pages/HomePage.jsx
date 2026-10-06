@@ -45,14 +45,14 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="space-y-24 pt-20 pb-16 bg-white">
+    <div className="space-y-24 pt-20 pb-16 bg-white dark:bg-slate-950 transition-colors duration-300">
       
       {/* 1. Hero Section (Official Royal Blue & White Branding) */}
       <section className="relative min-h-[85vh] flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
         
         {/* Subtle Ambient Royal Blue Glow */}
-        <div className="pointer-events-none absolute -top-24 left-1/4 w-[500px] h-[500px] bg-blue-100/60 rounded-full blur-[140px]" />
-        <div className="pointer-events-none absolute top-1/3 -right-20 w-[450px] h-[450px] bg-sky-100/60 rounded-full blur-[150px]" />
+        <div className="pointer-events-none absolute -top-24 left-1/4 w-[500px] h-[500px] bg-blue-100/60 dark:bg-blue-950/40 rounded-full blur-[140px]" />
+        <div className="pointer-events-none absolute top-1/3 -right-20 w-[450px] h-[450px] bg-sky-100/60 dark:bg-sky-950/30 rounded-full blur-[150px]" />
 
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
@@ -64,36 +64,36 @@ export default function HomePage() {
               <img
                 src="/mido-logo-badge.jpg"
                 alt="MIDO Productions Official Emblem"
-                className="h-11 w-auto rounded-xl border border-blue-200 shadow-sm bg-[#001080] object-contain p-1"
+                className="h-11 w-auto rounded-xl border border-blue-200 dark:border-blue-800 shadow-sm bg-[#001080] object-contain p-1"
               />
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-xs text-[#0A188F]">
-                <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-xs text-[#0A188F] dark:text-sky-300">
+                <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-sky-400 animate-pulse" />
                 <span className="font-bold tracking-wide">ESTABLISHED 2000 • ACCRA, GHANA</span>
               </div>
             </div>
 
             <div className="space-y-4">
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.12] tracking-tight">
-                Pioneering <span className="text-[#0A188F]">Live Sound & Choral Acoustics</span> for Over Two Decades.
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white leading-[1.12] tracking-tight">
+                Pioneering <span className="text-[#0A188F] dark:text-sky-400">Live Sound & Choral Acoustics</span> for Over Two Decades.
               </h1>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-sans max-w-2xl">
+              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-sans max-w-2xl">
                 Founded by veteran sound engineer <strong>Mr. Dominic Ansah-Asare</strong>, <strong>MIDO Productions Ltd</strong> is Ghana’s definitive benchmark for live concert audio, classical choral acoustics, intelligent stage lighting, 4K LED video walls, and global broadcast transmission.
               </p>
             </div>
 
             {/* Quick Proof Badges */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-              <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-                <div className="text-[#0A188F] font-display font-bold text-2xl">24+ Years</div>
-                <div className="text-slate-600 text-xs font-medium">Acoustic Mastery</div>
+              <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div className="text-[#0A188F] dark:text-sky-400 font-display font-bold text-2xl">24+ Years</div>
+                <div className="text-slate-600 dark:text-slate-400 text-xs font-medium">Acoustic Mastery</div>
               </div>
-              <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-                <div className="text-slate-900 font-display font-bold text-2xl">1,500+</div>
-                <div className="text-slate-600 text-xs font-medium">Concerts & Galas</div>
+              <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div className="text-slate-900 dark:text-white font-display font-bold text-2xl">1,500+</div>
+                <div className="text-slate-600 dark:text-slate-400 text-xs font-medium">Concerts & Galas</div>
               </div>
-              <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm col-span-2 sm:col-span-1">
-                <div className="text-blue-600 font-display font-bold text-2xl">World Games</div>
-                <div className="text-slate-600 text-xs font-medium">Harmonious Partner</div>
+              <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm col-span-2 sm:col-span-1">
+                <div className="text-blue-600 dark:text-sky-400 font-display font-bold text-2xl">World Games</div>
+                <div className="text-slate-600 dark:text-slate-400 text-xs font-medium">Harmonious Partner</div>
               </div>
             </div>
 
@@ -109,24 +109,24 @@ export default function HomePage() {
 
               <Link
                 to="/ceo"
-                className="px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm border border-slate-200 transition-all flex items-center gap-1.5"
+                className="px-6 py-3.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-sm border border-slate-200 dark:border-slate-700 transition-all flex items-center gap-1.5"
               >
-                <UserCheck className="w-4 h-4 text-[#0A188F]" />
+                <UserCheck className="w-4 h-4 text-[#0A188F] dark:text-sky-400" />
                 <span>CEO Profile</span>
               </Link>
 
               <a
                 href="tel:+233244843666"
-                className="text-xs text-slate-600 hover:text-[#0A188F] flex items-center gap-1.5 transition-colors py-2 font-medium"
+                className="text-xs text-slate-600 dark:text-slate-400 hover:text-[#0A188F] dark:hover:text-sky-400 flex items-center gap-1.5 transition-colors py-2 font-medium"
               >
-                <Phone className="w-3.5 h-3.5 text-blue-600" />
+                <Phone className="w-3.5 h-3.5 text-blue-600 dark:text-sky-400" />
                 <span>Call Director: +233 244 843 666</span>
               </a>
             </div>
 
             {/* Credibility Stamp */}
-            <div className="flex items-center gap-2 pt-2 text-xs text-slate-500">
-              <ShieldCheck className="w-4 h-4 text-blue-600 shrink-0" />
+            <div className="flex items-center gap-2 pt-2 text-xs text-slate-500 dark:text-slate-400">
+              <ShieldCheck className="w-4 h-4 text-blue-600 dark:text-sky-400 shrink-0" />
               <span>Context-Responsive Calibration • Yamaha & DiGiCo Consoles • Zero-Feedback Guarantee</span>
             </div>
 
@@ -143,12 +143,12 @@ export default function HomePage() {
 
       {/* 2. Genuine Client Logos Marquee / Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3">
-            <span className="text-xs font-mono uppercase tracking-wider text-[#0A188F] font-bold">
+        <div className="bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm transition-colors">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+            <span className="text-xs font-mono uppercase tracking-wider text-[#0A188F] dark:text-sky-400 font-bold">
               Trusted Technical Partners Across Ghana
             </span>
-            <span className="text-[11px] font-mono text-slate-500">
+            <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
               Choral Champions, Universities & National Institutions
             </span>
           </div>
@@ -157,14 +157,14 @@ export default function HomePage() {
             {clientLogos.map((client) => (
               <div
                 key={client.name}
-                className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col items-center justify-center gap-2 h-24 hover:border-blue-300 transition-colors"
+                className="p-3.5 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col items-center justify-center gap-2 h-24 hover:border-blue-300 dark:hover:border-blue-500 transition-colors"
               >
                 <img
                   src={client.logo}
                   alt={client.name}
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-12 max-w-full object-contain dark:brightness-110"
                 />
-                <span className="text-[10px] text-slate-600 font-mono text-center line-clamp-1">
+                <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono text-center line-clamp-1">
                   {client.name}
                 </span>
               </div>
@@ -175,17 +175,17 @@ export default function HomePage() {
  
       {/* 3. Official YouTube Channel & Video Archive Spotlight (Prominently Featured) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-red-50/70 via-slate-50 to-white rounded-3xl border border-red-100 p-6 sm:p-10 shadow-sm space-y-8">
+        <div className="bg-gradient-to-br from-red-50/70 via-slate-50 to-white dark:from-red-950/20 dark:via-slate-900 dark:to-slate-900 rounded-3xl border border-red-100 dark:border-red-900/30 p-6 sm:p-10 shadow-sm space-y-8 transition-colors">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 border border-red-200 text-xs font-mono text-red-700 font-bold">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 dark:bg-red-950/60 border border-red-200 dark:border-red-900 text-xs font-mono text-red-700 dark:text-red-400 font-bold">
                 <YoutubeIcon className="w-4 h-4 text-red-600" />
                 <span>OFFICIAL YOUTUBE BROADCASTS • CHANNEL ID: UCw0DzAjtJQe9wO_6eEFSnyw</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
                 Watch Live Productions & Studio Masterclasses
               </h2>
-              <p className="text-slate-600 text-sm max-w-2xl leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-300 text-sm max-w-2xl leading-relaxed">
                 Experience why Ghana's premier choirs, artists, and corporations trust MIDO Productions. Stream full choral performances, Armed Forces band sessions, and audio masterclasses recorded at our Oyibi complex.
               </p>
             </div>
@@ -202,7 +202,7 @@ export default function HomePage() {
                 href="https://www.youtube.com/channel/UCw0DzAjtJQe9wO_6eEFSnyw"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-semibold text-xs border border-slate-200 shadow-sm flex items-center gap-1.5 transition-colors"
+                className="px-5 py-3 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs border border-slate-200 dark:border-slate-700 shadow-sm flex items-center gap-1.5 transition-colors"
               >
                 <YoutubeIcon className="w-4 h-4 text-red-600" />
                 <span>@midoproductions</span>
@@ -215,7 +215,7 @@ export default function HomePage() {
             {featuredVideos.map((video) => (
               <div
                 key={video.id}
-                className="rounded-2xl bg-white border border-slate-200 hover:border-red-300 shadow-sm hover:shadow-xl transition-all overflow-hidden group flex flex-col justify-between"
+                className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-red-300 dark:hover:border-red-905 shadow-sm hover:shadow-xl transition-all overflow-hidden group flex flex-col justify-between"
               >
                 <div>
                   <div
@@ -232,7 +232,7 @@ export default function HomePage() {
                         <Play className="w-5 h-5 fill-current ml-0.5" />
                       </div>
                     </div>
-                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-white/95 text-slate-900 font-mono text-[10px] font-bold">
+                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-white/95 dark:bg-slate-900/90 text-slate-900 dark:text-slate-100 font-mono text-[10px] font-bold">
                       {video.category}
                     </span>
                     <span className="absolute bottom-3 right-3 px-2 py-0.5 rounded bg-black/80 text-white font-mono text-[10px] font-semibold">
@@ -242,25 +242,25 @@ export default function HomePage() {
                   <div className="p-5 space-y-2">
                     <h4
                       onClick={() => setSelectedVideo(video)}
-                      className="font-bold text-slate-900 text-sm line-clamp-1 cursor-pointer hover:text-red-600 transition-colors"
+                      className="font-bold text-slate-900 dark:text-white text-sm line-clamp-1 cursor-pointer hover:text-red-600 dark:hover:text-red-400 transition-colors"
                     >
                       {video.title}
                     </h4>
-                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed">
                       {video.description}
                     </p>
                   </div>
                 </div>
 
-                <div className="px-5 pb-5 pt-1 border-t border-slate-100 flex items-center justify-between">
+                <div className="px-5 pb-5 pt-1 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                   <button
                     onClick={() => setSelectedVideo(video)}
-                    className="text-xs font-bold text-red-600 hover:text-red-700 flex items-center gap-1"
+                    className="text-xs font-bold text-red-600 hover:text-red-700 font-bold flex items-center gap-1"
                   >
                     <span>Watch Video</span>
                     <Play className="w-3 h-3 fill-current ml-0.5" />
                   </button>
-                  <span className="text-[11px] font-mono text-slate-400">
+                  <span className="text-[11px] font-mono text-slate-400 dark:text-slate-500">
                     {video.published}
                   </span>
                 </div>
@@ -273,36 +273,36 @@ export default function HomePage() {
       {/* 4. Interactive Soundboard A/B Comparison Tool */}
       <SoundboardDemo />
 
-      {/* 4. The Dominic Ansah-Asare Leadership & Heritage (With Real Photo) */}
+      {/* 5. The Dominic Ansah-Asare Leadership & Heritage (With Real Photo) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-blue-50/70 via-slate-50 to-white rounded-3xl border border-blue-100 p-8 sm:p-12 shadow-lg relative overflow-hidden">
+        <div className="bg-gradient-to-br from-blue-50/70 via-slate-50 to-white dark:from-blue-950/20 dark:via-slate-900 dark:to-slate-900 rounded-3xl border border-blue-100 dark:border-blue-900/30 p-8 sm:p-12 shadow-lg relative overflow-hidden transition-colors">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
             <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/70 border border-blue-200 text-xs font-mono text-[#0A188F] font-bold">
-                <Sliders className="w-3.5 h-3.5 text-blue-600" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/70 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-xs font-mono text-[#0A188F] dark:text-sky-300 font-bold">
+                <Sliders className="w-3.5 h-3.5 text-blue-600 dark:text-sky-400" />
                 <span>LEADERSHIP & ENGINEERING HERITAGE</span>
               </div>
 
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight leading-tight">
                 "Sound is acoustic science in service of musical emotion."
               </h2>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
                 Under the leadership of <strong>Mr. Dominic Ansah-Asare</strong>—a distinguished British Council Music Technology alumnus under Dr. Gordon Ross, professional member of the Berklee College of Music, and celebrated judge on TV3’s <em>Mentor</em>—MIDO Productions has set the national benchmark for choral music engineering and high-profile event production.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm">
-                  <div className="font-bold text-slate-900 text-xs mb-1">Context-Responsive Acoustics</div>
-                  <div className="text-[11px] text-slate-600 leading-snug">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700 shadow-sm">
+                  <div className="font-bold text-slate-900 dark:text-white text-xs mb-1">Context-Responsive Acoustics</div>
+                  <div className="text-[11px] text-slate-600 dark:text-slate-300 leading-snug">
                     Tuning line arrays to match room reverberation times and architectural reflections.
                   </div>
                 </div>
-                <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm">
-                  <div className="font-bold text-slate-900 text-xs mb-1">Choral Sound Engineer of the Year</div>
-                  <div className="text-[11px] text-slate-600 leading-snug">
+                <div className="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200/90 dark:border-slate-700 shadow-sm">
+                  <div className="font-bold text-slate-900 dark:text-white text-xs mb-1">Choral Sound Engineer of the Year</div>
+                  <div className="text-[11px] text-slate-600 dark:text-slate-300 leading-snug">
                     Honored at the Ghana Youth Choir Festival for pristine symphonic sound.
                   </div>
                 </div>
@@ -318,7 +318,7 @@ export default function HomePage() {
                 </Link>
                 <Link
                   to="/about"
-                  className="text-xs text-slate-600 hover:text-[#0A188F] font-semibold"
+                  className="text-xs text-slate-600 dark:text-slate-300 hover:text-[#0A188F] dark:hover:text-sky-400 font-semibold"
                 >
                   About the 24-year journey &rarr;
                 </Link>
@@ -327,7 +327,7 @@ export default function HomePage() {
 
             {/* Right Column: Genuine Portrait of Dominic Ansah-Asare */}
             <div className="lg:col-span-5 space-y-4">
-              <div className="relative rounded-2xl overflow-hidden border-4 border-white shadow-xl group">
+              <div className="relative rounded-2xl overflow-hidden border-4 border-white dark:border-slate-800 shadow-xl group">
                 <img
                   src="/images/dominic/dominic-ansa-asare-portrait.webp"
                   alt="Mr. Dominic Ansah-Asare, CEO of MIDO Productions Ltd"
@@ -348,9 +348,9 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between text-xs font-mono shadow-sm">
-                <span className="text-slate-600">Facility: Oyibi Production Complex</span>
-                <span className="text-emerald-700 font-bold">● Active Operations</span>
+              <div className="p-3.5 rounded-xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs font-mono shadow-sm">
+                <span className="text-slate-600 dark:text-slate-300">Facility: Oyibi Production Complex</span>
+                <span className="text-emerald-700 dark:text-emerald-400 font-bold">● Active Operations</span>
               </div>
             </div>
 
@@ -363,16 +363,16 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
           <div>
-            <span className="text-xs font-mono text-[#0A188F] uppercase tracking-wider font-bold block mb-2">
+            <span className="text-xs font-mono text-[#0A188F] dark:text-sky-400 uppercase tracking-wider font-bold block mb-2">
               Comprehensive Capabilities
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
               6 Core Production Pillars
             </h2>
           </div>
           <Link
             to="/services"
-            className="text-xs font-bold text-[#0A188F] hover:text-blue-700 flex items-center gap-1.5"
+            className="text-xs font-bold text-[#0A188F] dark:text-sky-400 hover:text-blue-700 dark:hover:text-sky-300 flex items-center gap-1.5"
           >
             <span>View detailed technical packages</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -414,31 +414,31 @@ export default function HomePage() {
           ].map((srv) => (
             <div
               key={srv.title}
-              className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-blue-400 hover:shadow-xl transition-all flex flex-col justify-between shadow-sm"
+              className="p-7 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-400 dark:hover:border-sky-500 hover:shadow-xl transition-all flex flex-col justify-between shadow-sm"
             >
               <div>
-                <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-blue-50 text-[#0A188F] font-bold border border-blue-200 mb-3 inline-block">
+                <span className="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded bg-blue-50 dark:bg-blue-950/60 text-[#0A188F] dark:text-sky-300 font-bold border border-blue-200 dark:border-blue-900 mb-3 inline-block">
                   {srv.tag}
                 </span>
-                <h3 className="font-display font-bold text-lg text-slate-900 mb-2">
+                <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white mb-2">
                   {srv.title}
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                   {srv.desc}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center text-xs">
+              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs">
                 <Link
                   to="/services"
-                  className="text-[#0A188F] hover:text-blue-700 font-bold flex items-center gap-1"
+                  className="text-[#0A188F] dark:text-sky-400 hover:text-blue-700 dark:hover:text-sky-300 font-bold flex items-center gap-1"
                 >
                   <span>Explore Specs</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
                 <Link
                   to="/quote"
-                  className="text-slate-500 hover:text-slate-900 font-medium"
+                  className="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium"
                 >
                   Get Quote &rarr;
                 </Link>
@@ -450,19 +450,19 @@ export default function HomePage() {
 
       {/* 6. Historic Ghanaian Projects Preview with Real Photography */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm space-y-8">
+        <div className="bg-slate-50 dark:bg-slate-900/60 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 sm:p-12 shadow-sm space-y-8 transition-colors">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
-              <span className="text-xs font-mono text-[#0A188F] uppercase tracking-wider font-bold block mb-2">
+              <span className="text-xs font-mono text-[#0A188F] dark:text-sky-400 uppercase tracking-wider font-bold block mb-2">
                 Proven Track Record
               </span>
-              <h2 className="font-serif text-3xl font-bold text-slate-900 tracking-tight">
+              <h2 className="font-serif text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                 Historic Choral & Corporate Collaborations
               </h2>
             </div>
             <Link
               to="/portfolio"
-              className="text-xs font-bold text-[#0A188F] hover:text-blue-700 flex items-center gap-1"
+              className="text-xs font-bold text-[#0A188F] dark:text-sky-400 hover:text-blue-700 dark:hover:text-sky-300 flex items-center gap-1"
             >
               <span>View full project portfolio</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -470,7 +470,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden group flex flex-col justify-between">
+            <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden group flex flex-col justify-between">
               <div>
                 <div className="h-44 overflow-hidden">
                   <img
@@ -480,16 +480,16 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="p-6 space-y-2">
-                  <span className="text-[10px] font-mono text-blue-600 font-bold uppercase">South Africa & Ghana</span>
-                  <h3 className="font-display font-bold text-base text-slate-900">Harmonious Chorale Ghana</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <span className="text-[10px] font-mono text-blue-600 dark:text-sky-400 font-bold uppercase">South Africa & Ghana</span>
+                  <h3 className="font-display font-bold text-base text-slate-900 dark:text-white">Harmonious Chorale Ghana</h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                     Long-term technical audio partner, including live sound engineering at the 2018 World Choir Games in South Africa.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden group flex flex-col justify-between">
+            <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden group flex flex-col justify-between">
               <div>
                 <div className="h-44 overflow-hidden">
                   <img
@@ -499,16 +499,16 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="p-6 space-y-2">
-                  <span className="text-[10px] font-mono text-blue-600 font-bold uppercase">Great Hall, Legon</span>
-                  <h3 className="font-display font-bold text-base text-slate-900">UG Easter Choral Festival</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <span className="text-[10px] font-mono text-blue-600 dark:text-sky-400 font-bold uppercase">Great Hall, Legon</span>
+                  <h3 className="font-display font-bold text-base text-slate-900 dark:text-white">UG Easter Choral Festival</h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                     Managing multi-choir staging, acoustic delay lines, and live radio broadcasting for over 2,500 collegiate patrons.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden group flex flex-col justify-between">
+            <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden group flex flex-col justify-between">
               <div>
                 <div className="h-44 overflow-hidden">
                   <img
@@ -518,9 +518,9 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="p-6 space-y-2">
-                  <span className="text-[10px] font-mono text-blue-600 font-bold uppercase">AICC Accra</span>
-                  <h3 className="font-display font-bold text-base text-slate-900">CIMG National Awards</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <span className="text-[10px] font-mono text-blue-600 dark:text-sky-400 font-bold uppercase">AICC Accra</span>
+                  <h3 className="font-display font-bold text-base text-slate-900 dark:text-white">CIMG National Awards</h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                     Flawless corporate speech intelligibility, high-refresh LED backdrop video walls, and live presidential protocol.
                   </p>
                 </div>
@@ -568,19 +568,19 @@ export default function HomePage() {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-slate-200 relative animate-in zoom-in-95 duration-200"
+            className="bg-white dark:bg-slate-900 rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-800 relative animate-in zoom-in-95 duration-200"
           >
             {/* Modal Top Bar */}
-            <div className="p-4 sm:p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+            <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-950">
               <div className="flex items-center gap-2.5 pr-4">
                 <YoutubeIcon className="w-5 h-5 text-red-600 shrink-0" />
-                <h3 className="font-display font-bold text-sm sm:text-base text-slate-900 line-clamp-1">
+                <h3 className="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white line-clamp-1">
                   {selectedVideo.title}
                 </h3>
               </div>
               <button
                 onClick={() => setSelectedVideo(null)}
-                className="w-8 h-8 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-700 flex items-center justify-center transition-colors shrink-0"
+                className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 flex items-center justify-center transition-colors shrink-0"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -598,23 +598,23 @@ export default function HomePage() {
             </div>
 
             {/* Modal Footer Description */}
-            <div className="p-5 sm:p-6 bg-white space-y-3">
+            <div className="p-5 sm:p-6 bg-white dark:bg-slate-900 space-y-3">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <span className="px-2.5 py-1 rounded bg-red-50 text-red-700 font-mono text-xs font-bold border border-red-200">
+                <span className="px-2.5 py-1 rounded bg-red-50 dark:bg-red-950/60 text-red-700 dark:text-red-400 font-mono text-xs font-bold border border-red-200 dark:border-red-900">
                   {selectedVideo.category}
                 </span>
-                <span className="text-xs text-slate-500 font-mono">
+                <span className="text-xs text-slate-500 dark:text-slate-400 font-mono">
                   Channel ID: UCw0DzAjtJQe9wO_6eEFSnyw
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                 {selectedVideo.description}
               </p>
               <div className="pt-2 flex flex-wrap justify-end gap-3">
                 <Link
                   to="/portfolio"
                   onClick={() => setSelectedVideo(null)}
-                  className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors"
+                  className="px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors border border-slate-200 dark:border-slate-700"
                 >
                   <span>All Portfolio Videos</span>
                   <ArrowRight className="w-3.5 h-3.5" />

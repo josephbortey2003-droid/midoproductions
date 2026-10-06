@@ -80,23 +80,17 @@ export default function MidoLogo({ className = "h-10", variant = "combined", the
         </svg>
       </div>
 
-      {/* Brand Text - Clear & High Contrast on White */}
+      {/* Brand Text - Clear & High Contrast in both Light and Dark mode */}
       <div className="flex flex-col">
         <div className="flex items-center gap-1.5">
-          <span className={`font-serif font-black text-xl sm:text-2xl tracking-wider leading-none ${
-            isDark ? 'text-white' : 'text-[#0A188F]'
-          }`}>
+          <span className="font-serif font-black text-xl sm:text-2xl tracking-wider leading-none text-[#0A188F] dark:text-white">
             MIDO
           </span>
-          <span className={`text-[10px] uppercase font-mono tracking-widest px-1.5 py-0.5 rounded font-bold border ${
-            isDark ? 'bg-blue-600/30 text-sky-200 border-blue-400/40' : 'bg-blue-50 text-[#0A188F] border-blue-200'
-          }`}>
+          <span className="text-[10px] uppercase font-mono tracking-widest px-1.5 py-0.5 rounded font-bold border bg-blue-50 dark:bg-blue-950/60 text-[#0A188F] dark:text-sky-300 border-blue-200 dark:border-blue-800">
             LTD
           </span>
         </div>
-        <span className={`text-[9px] uppercase font-mono tracking-widest font-bold mt-0.5 ${
-          isDark ? 'text-sky-300' : 'text-slate-600'
-        }`}>
+        <span className="text-[9px] uppercase font-mono tracking-widest font-bold mt-0.5 text-slate-600 dark:text-slate-300">
           PRODUCTIONS
         </span>
       </div>

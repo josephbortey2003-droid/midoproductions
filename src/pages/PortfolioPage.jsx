@@ -84,19 +84,19 @@ export default function PortfolioPage() {
       tag: 'Studio & Live',
     },
     {
-      title: 'One Voice Choir – National Concert Tours',
+      title: 'MIDO Sound Engineering Crew – National Concert Staging',
       category: 'choral',
       image: '/images/production/choral-choir-performance.jpg',
-      venue: 'National Theatre of Ghana & Regional Cathedrals',
-      client: 'One Voice Choir',
-      year: 'Choral Production',
+      venue: 'National Theatre of Ghana & Touring Auditoriums',
+      client: 'MIDO Technical Crew & Resident Engineers',
+      year: 'Touring & Soundcheck',
       challenge:
-        'Touring varied acoustic spaces across Ghana while maintaining identical vocal balance and monitor mix for the choir director.',
+        'Managing high-channel condenser microphone distribution, multi-monitor acoustic zoning, and live multi-track capture across touring venues.',
       solution:
-        'Dedicated tour-grade Dante stage racks and pre-calibrated digital scene presets customized for each venue’s acoustic footprint.',
+        'Dominic Ansah-Asare leads resident MIDO audio engineers deploying Dante digital stage boxes and real-time spectrum analyzers.',
       outcome:
-        'Consistently sold-out concerts praised for acoustic discipline and musical clarity.',
-      tag: 'National Tour',
+        'Consistently acclaimed for setting the benchmark of professional sound engineering discipline on Ghanaian stages.',
+      tag: 'MIDO Technical Crew',
     },
     {
       title: '"Choral Insight" Documentary & TV Series',
@@ -164,42 +164,42 @@ export default function PortfolioPage() {
     filter === 'all' ? projects : projects.filter((p) => p.category === filter);
 
   return (
-    <div className="pt-28 pb-20 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+    <div className="pt-28 pb-20 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors duration-300">
       
       {/* 1. Page Header */}
       <div className="max-w-3xl space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono text-[#0A188F] font-bold">
-          <Camera className="w-3.5 h-3.5 text-blue-600" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-xs font-mono text-[#0A188F] dark:text-sky-300 font-bold">
+          <Camera className="w-3.5 h-3.5 text-blue-600 dark:text-sky-400" />
           <span>AUTHENTIC PORTFOLIO & CASE STUDIES</span>
         </div>
-        <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight">
+        <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white tracking-tight">
           Two Decades on Ghana’s Grandest Stages.
         </h1>
-        <p className="text-slate-600 text-base leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
           From international choir championships to presidential state summits, explore genuine photographs and technical breakdowns from MIDO Productions' historic archive.
         </p>
       </div>
 
       {/* 2. Client Partner Logo Bar (Genuine Clients from Mido Site) */}
-      <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm">
+      <div className="bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm transition-colors">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-mono uppercase tracking-wider text-[#0A188F] font-bold">
+          <span className="text-xs font-mono uppercase tracking-wider text-[#0A188F] dark:text-sky-400 font-bold">
             Trusted By Ghana’s Foremost Choirs & Institutions
           </span>
-          <span className="text-[11px] font-mono text-slate-500">Official Production Partners</span>
+          <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">Official Production Partners</span>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 items-center">
           {clientLogos.map((client) => (
             <div
               key={client.name}
-              className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col items-center justify-center gap-2 h-24 hover:border-blue-300 transition-colors"
+              className="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col items-center justify-center gap-2 h-24 hover:border-blue-300 dark:hover:border-blue-500 transition-colors"
             >
               <img
                 src={client.logo}
                 alt={client.name}
-                className="max-h-12 max-w-full object-contain"
+                className="max-h-12 max-w-full object-contain dark:brightness-110"
               />
-              <span className="text-[10px] text-slate-600 font-mono text-center line-clamp-1">
+              <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono text-center line-clamp-1">
                 {client.name}
               </span>
             </div>
@@ -215,8 +215,8 @@ export default function PortfolioPage() {
             onClick={() => setFilter(c.id)}
             className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
               filter === c.id
-                ? 'bg-[#0A188F] text-white font-bold shadow-md shadow-blue-900/20'
-                : 'bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900 border border-slate-200'
+                ? 'bg-[#0A188F] dark:bg-blue-600 text-white font-bold shadow-md shadow-blue-900/20'
+                : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700'
             }`}
           >
             {c.label}
@@ -229,18 +229,18 @@ export default function PortfolioPage() {
         {filtered.map((proj) => (
           <div
             key={proj.title}
-            className="rounded-3xl bg-white border border-slate-200 hover:border-blue-400 hover:shadow-xl transition-all flex flex-col justify-between shadow-sm overflow-hidden group"
+            className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-400 dark:hover:border-sky-500 hover:shadow-xl transition-all flex flex-col justify-between shadow-sm overflow-hidden group"
           >
             <div>
               {/* Genuine Project Image */}
-              <div className="relative h-56 overflow-hidden bg-slate-100">
+              <div className="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
                 <img
                   src={proj.image}
                   alt={proj.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-3 left-3">
-                  <span className="px-2.5 py-1 rounded-full bg-white/95 text-[#0A188F] font-bold text-[10px] uppercase font-mono shadow-sm">
+                  <span className="px-2.5 py-1 rounded-full bg-white/95 dark:bg-slate-900/90 text-[#0A188F] dark:text-sky-300 font-bold text-[10px] uppercase font-mono shadow-sm">
                     {proj.tag}
                   </span>
                 </div>
@@ -254,25 +254,25 @@ export default function PortfolioPage() {
               {/* Project Content */}
               <div className="p-6 space-y-4">
                 <div>
-                  <h2 className="font-display font-bold text-lg text-slate-900 leading-snug">
+                  <h2 className="font-display font-bold text-lg text-slate-900 dark:text-white leading-snug">
                     {proj.title}
                   </h2>
-                  <div className="text-xs text-blue-700 mt-1.5 flex items-center gap-1.5 font-medium">
-                    <MapPin className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                  <div className="text-xs text-blue-700 dark:text-sky-400 mt-1.5 flex items-center gap-1.5 font-medium">
+                    <MapPin className="w-3.5 h-3.5 text-blue-600 dark:text-sky-400 shrink-0" />
                     <span className="line-clamp-1">{proj.venue}</span>
                   </div>
                 </div>
 
-                <div className="space-y-2.5 pt-1 text-xs text-slate-600">
-                  <div className="p-3 rounded-xl bg-rose-50/70 border border-rose-200">
-                    <strong className="text-rose-700 block mb-0.5 font-mono text-[10px] font-bold uppercase">
+                <div className="space-y-2.5 pt-1 text-xs text-slate-600 dark:text-slate-300">
+                  <div className="p-3 rounded-xl bg-rose-50/70 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/40">
+                    <strong className="text-rose-700 dark:text-rose-400 block mb-0.5 font-mono text-[10px] font-bold uppercase">
                       Acoustic Challenge:
                     </strong>
                     <p className="line-clamp-3">{proj.challenge}</p>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-blue-50/70 border border-blue-200">
-                    <strong className="text-[#0A188F] block mb-0.5 font-mono text-[10px] font-bold uppercase">
+                  <div className="p-3 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/50">
+                    <strong className="text-[#0A188F] dark:text-sky-300 block mb-0.5 font-mono text-[10px] font-bold uppercase">
                       MIDO Solution:
                     </strong>
                     <p className="line-clamp-3">{proj.solution}</p>
@@ -281,9 +281,9 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            <div className="px-6 pb-6 pt-3 border-t border-slate-100">
-              <div className="text-xs text-slate-600 leading-snug">
-                <strong className="text-slate-900">Outcome: </strong>
+            <div className="px-6 pb-6 pt-3 border-t border-slate-100 dark:border-slate-800">
+              <div className="text-xs text-slate-600 dark:text-slate-300 leading-snug">
+                <strong className="text-slate-900 dark:text-white">Outcome: </strong>
                 {proj.outcome}
               </div>
             </div>
@@ -296,42 +296,42 @@ export default function PortfolioPage() {
       <YouTubePortfolio />
 
       {/* 6. Production Atmosphere Showcase */}
-      <section className="bg-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-12 space-y-6 shadow-sm">
+      <section className="bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-12 space-y-6 shadow-sm transition-colors">
         <div className="max-w-2xl space-y-2">
-          <span className="text-xs font-mono text-[#0A188F] uppercase tracking-wider font-bold">
+          <span className="text-xs font-mono text-[#0A188F] dark:text-sky-400 uppercase tracking-wider font-bold">
             Live Production Gallery
           </span>
-          <h2 className="font-serif text-3xl font-bold text-slate-900">
+          <h2 className="font-serif text-3xl font-bold text-slate-900 dark:text-white">
             Precision Gear in Action
           </h2>
-          <p className="text-slate-600 text-sm">
+          <p className="text-slate-600 dark:text-slate-300 text-sm">
             Genuine photographs from live sound checks, moving head lighting programs, and grand piano acoustic miking across Accra.
           </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="rounded-2xl overflow-hidden border border-slate-200 h-44 shadow-sm group">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 h-44 shadow-sm group">
             <img
               src="/images/production/lighting-moving-heads.webp"
               alt="Sharpy moving heads stage lighting"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <div className="rounded-2xl overflow-hidden border border-slate-200 h-44 shadow-sm group">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 h-44 shadow-sm group">
             <img
               src="/images/production/concert-grand-piano.webp"
               alt="Concert grand piano acoustic miking"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <div className="rounded-2xl overflow-hidden border border-slate-200 h-44 shadow-sm group">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 h-44 shadow-sm group">
             <img
               src="/images/production/sound-engineer-foh.webp"
               alt="MIDO sound engineer at FOH desk"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <div className="rounded-2xl overflow-hidden border border-slate-200 h-44 shadow-sm group">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 h-44 shadow-sm group">
             <img
               src="/images/production/stage-truss-rigging.webp"
               alt="Aluminum box truss rigging"

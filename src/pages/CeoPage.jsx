@@ -38,29 +38,29 @@ export default function CeoPage() {
   ];
 
   return (
-    <div className="pt-28 pb-20 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+    <div className="pt-28 pb-20 space-y-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors duration-300">
       
       {/* 1. Header Banner */}
       <div className="max-w-3xl space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono text-[#0A188F] font-bold">
-          <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-xs font-mono text-[#0A188F] dark:text-sky-300 font-bold">
+          <Sparkles className="w-3.5 h-3.5 text-blue-600 dark:text-sky-400" />
           <span>CHIEF EXECUTIVE OFFICER & FOUNDER</span>
         </div>
-        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight">
+        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white tracking-tight">
           Mr. Dominic Ansah-Asare
         </h1>
-        <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
           Pioneering live sound engineer, classical choral acoustic architect, British Council Music Technology alumnus, and champion of Ghanaian Art Music.
         </p>
       </div>
 
       {/* 2. Main Executive Profile Section */}
-      <section className="bg-gradient-to-br from-blue-50/60 via-slate-50 to-white rounded-3xl border border-blue-100 p-8 sm:p-12 shadow-lg">
+      <section className="bg-gradient-to-br from-blue-50/60 via-slate-50 to-white dark:from-blue-950/20 dark:via-slate-900 dark:to-slate-900 rounded-3xl border border-blue-100 dark:border-blue-900/30 p-8 sm:p-12 shadow-lg transition-colors">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           {/* Portrait Photo (Genuine Image from midoproductions.com/ceo/) */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="relative rounded-2xl overflow-hidden border-4 border-white shadow-2xl group">
+            <div className="relative rounded-2xl overflow-hidden border-4 border-white dark:border-slate-800 shadow-2xl group">
               <img
                 src="/images/dominic/dominic-ansa-asare-portrait.webp"
                 alt="Mr. Dominic Ansah-Asare"
@@ -82,14 +82,14 @@ export default function CeoPage() {
             </div>
 
             {/* Direct Contact Button */}
-            <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-between">
+            <div className="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 shadow-sm flex items-center justify-between">
               <div>
-                <div className="text-[10px] font-mono text-slate-500 uppercase">Direct Executive Line</div>
-                <div className="text-xs font-bold text-slate-900">+233 244 843 666</div>
+                <div className="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase">Direct Executive Line</div>
+                <div className="text-xs font-bold text-slate-900 dark:text-white">+233 244 843 666</div>
               </div>
               <a
                 href="tel:+233244843666"
-                className="px-3.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#0A188F] font-bold text-xs border border-blue-200 transition-colors"
+                className="px-3.5 py-1.5 rounded-xl bg-blue-50 dark:bg-blue-950/60 hover:bg-blue-100 dark:hover:bg-blue-900/60 text-[#0A188F] dark:text-sky-300 font-bold text-xs border border-blue-200 dark:border-blue-900 transition-colors"
               >
                 Call Office
               </a>
@@ -98,7 +98,7 @@ export default function CeoPage() {
 
           {/* Biography Text & Philosophical Statement */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
+            <div className="space-y-4 text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
               <p>
                 <strong>Mr. Dominic Ansah-Asare</strong> is one of Ghana's most respected authorities on concert sound reinforcement, choral acoustics, and broadcast audio. Son of the revered composer and choir master <strong>Julius Ansa-Asare</strong>, Dominic was immersed from early childhood in the disciplines of vocal harmony, organ performance, and Ghanaian choral traditions.
               </p>
@@ -111,12 +111,12 @@ export default function CeoPage() {
             </div>
 
             {/* Key Quote Box */}
-            <div className="p-6 rounded-2xl bg-white border border-blue-200 shadow-sm relative">
-              <div className="text-3xl text-blue-300 font-serif absolute top-3 left-4">“</div>
-              <p className="text-sm sm:text-base italic text-slate-800 font-serif relative z-10 pl-6 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-blue-200 dark:border-blue-900/60 shadow-sm relative">
+              <div className="text-3xl text-blue-300 dark:text-blue-500 font-serif absolute top-3 left-4">“</div>
+              <p className="text-sm sm:text-base italic text-slate-800 dark:text-slate-200 font-serif relative z-10 pl-6 leading-relaxed">
                 The human voice is the most delicate and expressive instrument created. When 100 voices sing together, you cannot simply make them loud. You must understand reverberation, phase alignment, and vocal timbre so the audience hears every consonant and feels every lyric.
               </p>
-              <div className="mt-3 pl-6 text-xs font-mono text-[#0A188F] font-bold">
+              <div className="mt-3 pl-6 text-xs font-mono text-[#0A188F] dark:text-sky-400 font-bold">
                 — Dominic Ansah-Asare
               </div>
             </div>
@@ -128,20 +128,20 @@ export default function CeoPage() {
       {/* 3. In the Field: Console Mixing & Masterclasses */}
       <section className="space-y-8">
         <div className="max-w-2xl space-y-2">
-          <span className="text-xs font-mono text-[#0A188F] uppercase tracking-wider font-bold">
+          <span className="text-xs font-mono text-[#0A188F] dark:text-sky-400 uppercase tracking-wider font-bold">
             Engineering in Action
           </span>
-          <h2 className="font-serif text-3xl font-bold text-slate-900">
+          <h2 className="font-serif text-3xl font-bold text-slate-900 dark:text-white">
             From the FOH Console to the Classroom
           </h2>
-          <p className="text-slate-600 text-sm">
+          <p className="text-slate-600 dark:text-slate-300 text-sm">
             Genuine photographs from live concert tours, mixing sessions, and educational masterclasses at the Mido Complex.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-white space-y-3 p-3">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900 space-y-3 p-3">
             <div className="rounded-xl overflow-hidden h-56">
               <img
                 src="/images/dominic/dominic-ansa-asare-soundboard.webp"
@@ -150,15 +150,15 @@ export default function CeoPage() {
               />
             </div>
             <div className="p-2 space-y-1">
-              <div className="text-xs font-mono text-[#0A188F] font-bold uppercase">LIVE CONCERT FOH</div>
-              <h4 className="font-bold text-slate-900 text-sm">Touring Digital Console Mixing</h4>
-              <p className="text-xs text-slate-600">
+              <div className="text-xs font-mono text-[#0A188F] dark:text-sky-300 font-bold uppercase">LIVE CONCERT FOH</div>
+              <h4 className="font-bold text-slate-900 dark:text-white text-sm">Touring Digital Console Mixing</h4>
+              <p className="text-xs text-slate-600 dark:text-slate-300">
                 Operating 64-channel digital desks with real-time multi-track capture during choral concerts.
               </p>
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-white space-y-3 p-3">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900 space-y-3 p-3">
             <div className="rounded-xl overflow-hidden h-56">
               <img
                 src="/images/dominic/dominic-ansa-asare-teaching.webp"
@@ -167,15 +167,15 @@ export default function CeoPage() {
               />
             </div>
             <div className="p-2 space-y-1">
-              <div className="text-xs font-mono text-[#0A188F] font-bold uppercase">EDUCATION & TRAINING</div>
-              <h4 className="font-bold text-slate-900 text-sm">Music Solutions School</h4>
-              <p className="text-xs text-slate-600">
+              <div className="text-xs font-mono text-[#0A188F] dark:text-sky-300 font-bold uppercase">EDUCATION & TRAINING</div>
+              <h4 className="font-bold text-slate-900 dark:text-white text-sm">Music Solutions School</h4>
+              <p className="text-xs text-slate-600 dark:text-slate-300">
                 Mentoring the next generation of Ghanaian sound engineers, lighting operators, and choir directors.
               </p>
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-white space-y-3 p-3">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900 space-y-3 p-3">
             <div className="rounded-xl overflow-hidden h-56">
               <img
                 src="/images/dominic/dominic-ansa-asare-founder.webp"
@@ -184,9 +184,9 @@ export default function CeoPage() {
               />
             </div>
             <div className="p-2 space-y-1">
-              <div className="text-xs font-mono text-[#0A188F] font-bold uppercase">LEADERSHIP</div>
-              <h4 className="font-bold text-slate-900 text-sm">Acoustic Consultation</h4>
-              <p className="text-xs text-slate-600">
+              <div className="text-xs font-mono text-[#0A188F] dark:text-sky-300 font-bold uppercase">LEADERSHIP</div>
+              <h4 className="font-bold text-slate-900 dark:text-white text-sm">Acoustic Consultation</h4>
+              <p className="text-xs text-slate-600 dark:text-slate-300">
                 Providing architectural acoustic evaluations for auditoriums, cathedrals, and event venues across Ghana.
               </p>
             </div>
@@ -196,12 +196,12 @@ export default function CeoPage() {
       </section>
 
       {/* 4. Career Milestones & Honors */}
-      <section className="bg-slate-50 rounded-3xl border border-slate-200 p-8 sm:p-12 space-y-8 shadow-sm">
+      <section className="bg-slate-50 dark:bg-slate-900/60 rounded-3xl border border-slate-200 dark:border-slate-800 p-8 sm:p-12 space-y-8 shadow-sm transition-colors">
         <div className="max-w-2xl space-y-2">
-          <span className="text-xs font-mono text-[#0A188F] uppercase tracking-wider font-bold">
+          <span className="text-xs font-mono text-[#0A188F] dark:text-sky-400 uppercase tracking-wider font-bold">
             Career Chronology
           </span>
-          <h2 className="font-serif text-3xl font-bold text-slate-900">
+          <h2 className="font-serif text-3xl font-bold text-slate-900 dark:text-white">
             A Legacy of Excellence & Cultural Impact
           </h2>
         </div>
@@ -210,13 +210,13 @@ export default function CeoPage() {
           {achievements.map((item) => (
             <div
               key={item.title}
-              className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2 hover:border-blue-300 transition-colors"
+              className="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 shadow-sm space-y-2 hover:border-blue-300 dark:hover:border-blue-500 transition-colors"
             >
-              <div className="text-xs font-mono font-bold text-[#0A188F] bg-blue-50 inline-block px-2.5 py-1 rounded-md border border-blue-200">
+              <div className="text-xs font-mono font-bold text-[#0A188F] dark:text-sky-300 bg-blue-50 dark:bg-blue-950/60 inline-block px-2.5 py-1 rounded-md border border-blue-200 dark:border-blue-900">
                 {item.year}
               </div>
-              <h4 className="font-bold text-sm text-slate-900">{item.title}</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">{item.desc}</p>
+              <h4 className="font-bold text-sm text-slate-900 dark:text-white">{item.title}</h4>
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>

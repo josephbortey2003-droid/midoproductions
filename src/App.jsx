@@ -38,24 +38,27 @@ function AnimatedRoutes() {
   );
 }
 
+import { ThemeProvider } from './context/ThemeContext';
+
 export default function App() {
   return (
-    <HashRouter>
-      {/* 1. Silky Smooth Momentum Scrolling (Lenis) */}
-      <SmoothScroll />
+    <ThemeProvider>
+      <HashRouter>
+        {/* 1. Silky Smooth Momentum Scrolling (Lenis) */}
+        <SmoothScroll />
 
-      {/* 2. Top Scroll Micro-Progress Indicator */}
-      <ScrollProgress />
+        {/* 2. Top Scroll Micro-Progress Indicator */}
+        <ScrollProgress />
 
-      {/* 3. Organic Ambient Stage Lighting with Lerp Physics */}
-      <AmbientStageLight />
+        {/* 3. Organic Ambient Stage Lighting with Lerp Physics */}
+        <AmbientStageLight />
 
-      {/* 4. Instant Reset on Page Transition */}
-      <ScrollToTop />
+        {/* 4. Instant Reset on Page Transition */}
+        <ScrollToTop />
 
-      <div className="min-h-screen bg-white text-slate-900 flex flex-col selection:bg-blue-100 selection:text-[#0A188F] relative z-10">
-        {/* Navigation Bar */}
-        <Navbar />
+        <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col selection:bg-blue-100 dark:selection:bg-blue-900 selection:text-[#0A188F] dark:selection:text-sky-300 relative z-10 transition-colors duration-300">
+          {/* Navigation Bar */}
+          <Navbar />
 
         {/* Dynamic Route Pages with Animated Transitions */}
         <main className="flex-1">
@@ -66,5 +69,6 @@ export default function App() {
         <Footer />
       </div>
     </HashRouter>
+  </ThemeProvider>
   );
 }

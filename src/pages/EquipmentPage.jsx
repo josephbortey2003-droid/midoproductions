@@ -162,17 +162,17 @@ export default function EquipmentPage() {
   const currentBanner = categoryBanners[activeTab];
 
   return (
-    <div className="pt-28 pb-20 space-y-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+    <div className="pt-28 pb-20 space-y-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 transition-colors duration-300">
       
       {/* Header */}
       <div className="max-w-3xl space-y-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono text-[#0A188F] font-bold">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 text-xs font-mono text-[#0A188F] dark:text-sky-300 font-bold">
           <span>TOUR-GRADE TECHNICAL INVENTORY</span>
         </div>
-        <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 tracking-tight">
+        <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white tracking-tight">
           Calibrated Tour & Studio Equipment.
         </h1>
-        <p className="text-slate-600 text-base leading-relaxed">
+        <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
           We maintain a comprehensive, tour-grade inventory at our Oyibi warehouse. Every microphone, console, line-array module, and moving light is bench-tested before deployment.
         </p>
       </div>
@@ -188,7 +188,7 @@ export default function EquipmentPage() {
               className={`px-4 py-2.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 ${
                 activeTab === c.id
                   ? 'bg-[#0A188F] text-white font-bold shadow-md shadow-blue-900/20'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900 border border-slate-200'
+                  : 'bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-800'
               }`}
             >
               <Icon className="w-4 h-4" />
@@ -199,20 +199,20 @@ export default function EquipmentPage() {
       </div>
 
       {/* Active Category Genuine Photo Banner */}
-      <div className="rounded-3xl border border-slate-200 overflow-hidden shadow-sm bg-slate-50 relative">
+      <div className="rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm bg-slate-50 dark:bg-slate-900/60 relative transition-colors">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
           <div className="lg:col-span-7 p-8 sm:p-10 space-y-3">
-            <span className="text-[11px] font-mono text-[#0A188F] font-bold uppercase tracking-wider block">
+            <span className="text-[11px] font-mono text-[#0A188F] dark:text-sky-400 font-bold uppercase tracking-wider block">
               FEATURED INVENTORY CATEGORY
             </span>
-            <h2 className="font-display font-bold text-2xl sm:text-3xl text-slate-900">
+            <h2 className="font-display font-bold text-2xl sm:text-3xl text-slate-900 dark:text-white">
               {currentBanner.title}
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl">
               {currentBanner.desc}
             </p>
           </div>
-          <div className="lg:col-span-5 h-56 lg:h-72 overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200">
+          <div className="lg:col-span-5 h-56 lg:h-72 overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200 dark:border-slate-800">
             <img
               src={currentBanner.image}
               alt={currentBanner.title}
@@ -227,39 +227,39 @@ export default function EquipmentPage() {
         {gear[activeTab].map((item) => (
           <div
             key={item.model}
-            className="p-7 rounded-3xl bg-white border border-slate-200 hover:border-blue-400 hover:shadow-xl transition-all flex flex-col justify-between shadow-sm"
+            className="p-7 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-400 dark:hover:border-sky-500 hover:shadow-xl transition-all flex flex-col justify-between shadow-sm"
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between text-xs">
-                <span className="text-[#0A188F] font-mono text-[11px] uppercase font-bold">
+                <span className="text-[#0A188F] dark:text-sky-400 font-mono text-[11px] uppercase font-bold">
                   {item.role}
                 </span>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 font-semibold">
                   {item.status}
                 </span>
               </div>
 
-              <h2 className="font-display font-bold text-lg text-slate-900">
+              <h2 className="font-display font-bold text-lg text-slate-900 dark:text-white">
                 {item.model}
               </h2>
 
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 {item.specs}
               </p>
 
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600">
-                <strong className="text-[#0A188F] block mb-0.5 font-mono text-[11px] font-bold">Why We Use This:</strong>
+              <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs text-slate-600 dark:text-slate-300">
+                <strong className="text-[#0A188F] dark:text-sky-400 block mb-0.5 font-mono text-[11px] font-bold">Why We Use This:</strong>
                 {item.why}
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span className="text-slate-500 font-mono text-[11px]">
+            <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+              <span className="text-slate-500 dark:text-slate-400 font-mono text-[11px]">
                 Calibrated in Accra
               </span>
               <Link
                 to="/quote"
-                className="text-[#0A188F] hover:text-blue-800 font-bold flex items-center gap-1"
+                className="text-[#0A188F] dark:text-sky-400 hover:text-blue-800 dark:hover:text-sky-300 font-bold flex items-center gap-1"
               >
                 <span>Add to Rider</span>
                 <ArrowRight className="w-3.5 h-3.5" />
